@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>My Store</title>
+</head>
+<body>
+    <div id="header"></div>
+    <script src="../scripts/linkHeader.js"></script>
+  
+    <div class="breadcrumb">
+        <a href="#">Trang chủ</a> &gt; <a href="#">Danh mục</a> &gt; <span>Trang hiện tại</span>
+    </div>
+    
+      <section>
+        <div class="slider-container">
+            <div class="slider" id="slider">
+              <img src="https://huythanhjewelry.vn/storage/photos/shares/TKM-T3_2-09.jpg" alt="Ảnh 1">
+              <img src="https://cdn.huythanhjewelry.vn/storage/photos/uploads/huyenlizziepcha-sz_1736748425.jpg" alt="Ảnh 2">
+              <img src="https://cdn.huythanhjewelry.vn/storage/photos/uploads/huyenlizziepc-ha-sz_1736748436.jpg" alt="Ảnh 3">
+            </div>
+        </div>
+    
+        <div class="product-slider-wrapper">
+          <button class="prev" onclick="prevPage()">&#10094;</button>
+        
+          <div class="products-container" id="product-list"></div>
+        
+          <button class="next" onclick="nextPage()">&#10095;</button>
+        </div>        
+    
+        <div class="banner-bg">
+          <div class="banner-content">
+            <h2>NHẪN CƯỚI MỚI NHẤT</h2>
+            <button>Xem ngay</button>
+          </div>
+        </div> 
+                   
+        <div class="section-title">Sản phẩm bán chạy nhất</div>
+        <div class="best-sellers">
+          <div class="policy-grid">
+            <div>Chính sách thu đổi</div>
+            <div>Chính sách bảo hành</div>
+            <div>Chính sách vận chuyển</div>
+            <div>Hướng dẫn đo size tay</div>
+          </div>
+        </div>
+      </section>
+    
+    <div id="footer"></div>
+    <script src="../scripts/linkFooter.js"></script>
+
+    <script>
+      function setupSlider(id) {
+       const slider = document.getElementById(id);
+       const slides = slider.children;
+       let currentIndex = 0;
+       setInterval(() => {
+         currentIndex = (currentIndex + 1) % slides.length;
+         slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+       }, 1000);
+     }
+ 
+     setupSlider('slider');
+     setupSlider('slider2');
+   </script>
+ 
+   <script>
+     const products = [
+       { title: 'Nhãn Cầu Hôn 14K', price: '8.129.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1731752863/ndino330ldia-vt-1_1732009337.png.webp' },
+       { title: 'Nhãn Cầu Hôn 14K', price: '8.806.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1731752857/ndino327movt1_1731916680.png.webp' },
+       { title: 'Nhãn Cầu Hôn 14K', price: '8.806.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722651504/ncz074ldiavh1_1725507719.png.webp' },
+       { title: 'Nhãn Cưới 14K Evermore', price: '14.463.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722651432/ncz037ldia7_1723016646.png.webp' },
+       { title: 'Nhãn Cưới 14K Evermore', price: '12.564.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722651522/ncz080ldiavh1_1725509772.png.webp' },
+       { title: 'Nhãn Kim Cương', price: '9.999.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1731752863/ndino330ldia-vt-1_1732009337.png.webp' },
+       { title: 'Nhãn Vàng Trắng', price: '7.888.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1731752863/ndino330ldia-vt-1_1732009337.png.webp' }
+     ];
+ 
+     let currentPage = 0;
+     const itemsPerPage = 5;
+ 
+     function renderProducts() {
+       const start = currentPage * itemsPerPage;
+       const end = start + itemsPerPage;
+       const list = document.getElementById('product-list');
+       list.innerHTML = '';
+ 
+       products.slice(start, end).forEach(p => {
+         list.innerHTML += `
+           <div class="product">
+             <a href="#">
+               <img src="${p.img}" alt="${p.title}">
+               <div class="product-title">${p.title}</div>
+               <div class="product-price">${p.price}</div>
+             </a>
+           </div>`;
+       });
+     }
+ 
+     function nextPage() {
+       if ((currentPage + 1) * itemsPerPage < products.length) {
+         currentPage++;
+         renderProducts();
+       }
+     }
+ 
+     function prevPage() {
+       if (currentPage > 0) {
+         currentPage--;
+         renderProducts();
+       }
+     }
+ 
+     renderProducts();
+   </script>
+  
+</body>
+</html>

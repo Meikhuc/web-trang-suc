@@ -1,0 +1,36 @@
+
+.service{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f0f4fa;
+    color: #1D2A3D;
+    margin: 20px 20px;
+    padding: 40px;
+    width: 100%;
+}
+
+.service-container img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.service-container{
+    margin: 0px;
+    width: 100%;
+    padding: 0px;
+    background: #fff;
+    box-sizing: border-box;
+    background-color: white;
+    font-size: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.service-container p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}

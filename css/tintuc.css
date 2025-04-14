@@ -1,0 +1,229 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1D2A3D;
+    margin-bottom: 1.5rem;
+  }
+
+  .post-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .boxPost1 {
+    background-color: #DAEDF7;
+    border-radius: 0.5rem;
+    padding: 20px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .boxPost1 .thumb {
+    padding-right: 1rem;
+    width: 500px;
+    flex-shrink: 0;
+    padding: 0px 40px 0px 0px;
+  }
+
+  .boxPost1 img {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  .boxPost1 .content {
+    flex: 1;
+  }
+
+  .boxPost1 .flex {
+    display: flex;
+  }
+
+  .boxPost1 .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .boxPost1 h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #1D2A3D;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  .boxPost1 p {
+    font-size: 0.9rem;
+    color: #1D2A3D;
+    margin-bottom: 0.75rem;
+  }
+
+  .boxPost1 .content > a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #FFA500;
+    color: white;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .boxPost1 .content > a:hover {
+    background-color: #fb923c;
+  }
+  
+  .boxPost1 .content h3 a {
+    color: #1D2A3D;
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .boxPost1 .content h3 a:hover {
+    color: pink;
+  }
+
+  .boxPost1 .content h3:hover{
+    color: pink;
+  }
+
+  .boxPost1 .date {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #6B7280;
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .boxPost2 {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 20px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .boxPost2.flex {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .boxPost2 .thumb2 {
+    padding-right: 1rem;
+    width: 300px;
+    flex-shrink: 0;
+    padding: 0px 40px 0px 0px;
+  }
+
+  .boxPost2 img {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  .boxPost2 .content2 {
+    flex: 1;
+  }
+
+  .boxPost2 .flex {
+    display: flex;
+  }
+
+  .boxPost2 .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .boxPost2 h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #1D2A3D;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  .boxPost2 p {
+    font-size: 0.9rem;
+    color: #1D2A3D;
+    margin-bottom: 0.75rem;
+  }
+
+  .boxPost2 .content2 h3 a {
+    color: #1D2A3D;
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .boxPost2 .content2 h3 a:hover {
+    color: pink;
+  }
+
+
+  .boxPost2 .content2 h3:hover{
+    color: pink;
+  }
+
+  .boxPost2 .date {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #6B7280;
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {           /*reposive*/
+    .boxPost1 {
+      flex-direction: column;
+    }
+  }
+
+/*thanh phân trang*/
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f3f4f6;
+    margin-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .pagination a {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    color: #1D2A3D;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .pagination a:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .pagination a.active {
+    border-bottom: 2px solid #00b300;
+    color: #00b300;
+    font-weight: bold;
+  }

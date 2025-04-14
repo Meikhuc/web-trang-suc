@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Sản Phẩm Nhẫn</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #fff;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+
+    .main-product {
+      flex: 1;
+      text-align: center;
+    }
+
+    .main-product img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .main-product .tags {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: #f88a9c;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    .tag img {
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .main-product .info {
+      margin-top: 15px;
+    }
+
+    .main-product .info h4 {
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    .main-product .info p {
+      margin: 0;
+    }
+
+    .main-product .info .price {
+      color: #f26b8a;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .related-products {
+      flex: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product-item {
+      text-align: center;
+    }
+
+    .product-item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product-item .tags {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 10px 0;
+    }
+
+    .product-item .info h4 {
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .product-item .info p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .product-item .info .price {
+      color: #f26b8a;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="main-product">
+      <img src="https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1713754076/ndino235bldia7_1716369261.png.webp" alt="Nhẫn chính">
+      <div class="tags">
+        <div class="tag">Quà tặng <img src="gift-icon.png" alt="Gift Icon"></div>
+        <div class="tag">Freeship <img src="truck-icon.png" alt="Truck Icon"></div>
+      </div>
+      <div class="info">
+        <h4>ETERNAL</h4>
+        <p>Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên</p>
+        <div class="price">29.977.000₫</div>
+      </div>
+    </div>
+
+    <div class="related-products">
+      <!-- Product item 1 -->
+      <div class="product-item">
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp" alt="Ring 1">
+        <div class="tags">
+          <div class="tag">Quà tặng <img src="gift-icon.png" alt="Gift Icon"></div>
+          <div class="tag">Freeship <img src="truck-icon.png" alt="Truck Icon"></div>
+        </div>
+        <div class="info">
+          <h4>ETERNAL</h4>
+          <p>Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên</p>
+          <div class="price">73.273.000₫</div>
+        </div>
+      </div>
+
+      <!-- Product item 2 -->
+      <div class="product-item">
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp" alt="Ring 2">
+        <div class="tags">
+          <div class="tag">Quà tặng <img src="gift-icon.png" alt="Gift Icon"></div>
+          <div class="tag">Freeship <img src="truck-icon.png" alt="Truck Icon"></div>
+        </div>
+        <div class="info">
+          <h4>EVERMORE</h4>
+          <p>Nhẫn Cầu Hôn Vàng 14K Kim Cương Lab-Grown</p>
+          <div class="price">26.779.000₫</div>
+        </div>
+      </div>
+
+      <!-- Product item 3 -->
+      <div class="product-item">
+        <img src="ring3.jpg" alt="Ring 3">
+        <div class="tags">
+          <div class="tag">Quà tặng <img src="gift-icon.png" alt="Gift Icon"></div>
+          <div class="tag">Freeship <img src="truck-icon.png" alt="Truck Icon"></div>
+        </div>
+        <div class="info">
+          <h4>ETERNAL</h4>
+          <p>Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên</p>
+          <div class="price">30.016.000₫</div>
+        </div>
+      </div>
+
+      <!-- Product item 4 -->
+      <div class="product-item">
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp" alt="Ring 4">
+        <div class="tags">
+          <div class="tag">Quà tặng <img src="gift-icon.png" alt="Gift Icon"></div>
+          <div class="tag">Freeship <img src="truck-icon.png" alt="Truck Icon"></div>
+        </div>
+        <div class="info">
+          <h4>EVERMORE</h4>
+          <p>Nhẫn Cầu Hôn Vàng 14K Kim Cương Lab-Grown</p>
+          <div class="price">26.719.000₫</div>
+        </div>
+      </div>
+
+      <!-- Product item 5 -->
+      <div class="product-item">
+        <img src="ring5.jpg" alt="Ring 5">
+        <div class="tags">
+          <div class="tag">Quà tặng <img src="gift-icon.png" alt="Gift Icon"></div>
+          <div class="tag">Freeship <img src="truck-icon.png" alt="Truck Icon"></div>
+        </div>
+        <div class="info">
+          <h4>EVERMORE</h4>
+          <p>Nhẫn Cầu Hôn Vàng 14K Kim Cương Lab-Grown</p>
+          <div class="price">12.249.000₫</div>
+        </div>
+      </div>
+
+      <!-- Product item 6 -->
+      <div class="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp">
+        <img src="ring6.jpg" alt="Ring 6">
+        <div class="tags">
+          <div class="tag">Quà tặng <img src="gift-icon.png" alt="Gift Icon"></div>
+          <div class="tag">Freeship <img src="truck-icon.png" alt="Truck Icon"></div>
+        </div>
+        <div class="info">
+          <h4>EVERMORE</h4>
+          <p>Nhẫn Cầu Hôn Vàng 14K Kim Cương Lab-Grown</p>
+          <div class="price">17.543.000₫</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

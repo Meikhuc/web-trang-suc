@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.main-bosuutap, .main-bosuutap-reverse, .collections, .footer { 
+    margin-top: 30px; 
+    padding: 0 5%; 
+}
+
+.main-bosuutap, .main-bosuutap-reverse { 
+    display: flex; 
+    gap: 30px; 
+    align-items: flex-start; 
+}
+
+.main-bosuutap img, .main-bosuutap-reverse img { 
+    width: 50%; 
+    border-radius: 10px; 
+}
+
+.bosuutap-details { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    width: 50%; 
+    margin: 100px 0px;
+}
+
+.bosuutap-description { 
+
+}
+
+.bosuutap-description h2 { 
+    margin-bottom: 10px; 
+}
+
+.bosuutap-description p { 
+    margin-bottom: 10px; 
+    text-align: justify; 
+    line-height: 1.6;
+}
+
+.bosuutap-listing { 
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+}
+
+.bosuutap { 
+    text-align: center; 
+    width: 48%; 
+    line-height: 1.6;
+}
+
+.bosuutap a{
+    color: #1D2A3D;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.bosuutap a:hover{
+    color: pink;
+}
+
+.bosuutap img { 
+    width: 100%; 
+    border-radius: 10px; 
+}
+
+.top-banner img { 
+    width: 100%; 
+    display: block; 
+}
+
+.title-line-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.title-line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.title-line::before,
+.title-line::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+    height: 1px;
+}
+
+.title-line span {
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #0d2c52;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/*Phần BST */
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+
+    .main-product-bst {
+      flex: 1;
+      text-align: center;
+    }
+
+    .main-product-bst img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .main-product-bst .tags {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: #f88a9c;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    .tag img {
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .main-product-bst .info {
+      margin-top: 15px;
+    }
+
+    .main-product-bst .info h4 {
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    .main-product-bst .info p {
+      margin: 0;
+    }
+
+    .main-product-bst .info .price {
+      color: #f26b8a;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .related-product-bsts {
+      flex: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product-bst-item {
+      text-align: center;
+    }
+
+    .product-bst-item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product-bst-item .tags {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 10px 0;
+    }
+
+    .product-bst-item .info h4 {
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .product-bst-item .info p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .product-bst-item .info .price {
+      color: #f26b8a;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 5px;
+    }

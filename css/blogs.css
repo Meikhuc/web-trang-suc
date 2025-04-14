@@ -1,0 +1,70 @@
+.blog-section-bg {
+    background-image: url('https://huythanhjewelry.vn/storage/photos/shares/ve-chung-toi/banner-aboutus-custom2022-2.webp'); /* Thay bằng ảnh nền của bạn */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    position: relative;
+    color: #fff;
+  }
+  
+  .blog-section-bg .overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Lớp phủ tối để làm rõ nội dung */
+    padding: 60px 20px;
+    border-radius: 12px;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+  
+  .section-title .brand {
+    color: #ffcc00;
+    font-weight: bold;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .blog-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .blog-title {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  
+  .blog-desc {
+    font-size: 16px;
+    color: #ddd;
+  }
+  
+  .read-more {
+    display: inline-block;
+    margin-top: 12px;
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+  }
+  

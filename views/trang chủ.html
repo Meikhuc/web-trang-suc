@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Store</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .left, .right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .logo h1 {
+      font-family: 'Cursive', sans-serif;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .icon-circle {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #aaa;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      position: relative;
+    }
+
+    .icon-circle::after {
+      content: attr(data-count);
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: red;
+      color: white;
+      font-size: 10px;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-evenly;
+      background: #f9f9f9;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 0 20px;
+    }
+
+    .breadcrumb {
+      max-width: 1200px;
+      margin: 20px auto;
+      font-size: 14px;
+      color: #555;
+    }
+    .breadcrumb a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .breadcrumb span {
+      color: #333;
+    }
+    .slider-container {
+      width: 100%;
+      max-width: 1200px;
+      overflow: hidden;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .slider {
+      display: flex;
+      width: 300%;
+      transition: transform 1.5s ease-in-out;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      margin: 20px auto 10px;
+      max-width: 1200px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      justify-content: space-between;
+    }
+
+    .product {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      flex: 1 1 calc(20% - 20px);
+      max-width: calc(20% - 20px);
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product-title {
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    .product-price {
+      color: red;
+      font-weight: bold;
+    }
+
+    .product a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .suggestion-box, .best-sellers, footer {
+      margin: 20px auto;
+      max-width: 1200px;
+      padding: 20px;
+      background: #f0f0f0;
+      border-radius: 8px;
+    }
+
+    .suggestion-box button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      background: white;
+      cursor: pointer;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .policy-grid div {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .address {
+      text-align: center;
+      padding: 10px;
+      background: #e0e0e0;
+      border-radius: 8px;
+    }
+
+    input[type="text"] {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .pagination {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .pagination button {
+      margin: 0 5px;
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #f9f9f9;
+    }
+    .custom-footer {
+        background: #fff;
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+        border-top: 1px solid #ddd;
+        margin-top: 40px;
+    }
+
+    .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 20px;
+    }
+
+    .footer-col {
+    flex: 1;
+    min-width: 250px;
+    }
+
+    .footer-col h2 {
+    font-size: 24px;
+    color: black;
+    margin: 10px 0;
+    }
+
+    .footer-col img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 6px;
+    }
+
+    .footer-social {
+    display: flex;
+    justify-content: right;
+    gap: 15px;
+    margin: 20px 0;
+    }
+
+    .footer-social a img {
+    width: 24px;
+    height: 24px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    }
+
+    .footer-social a:hover img {
+    filter: grayscale(0%);
+    }
+
+    .footer-info {
+    text-align: right;
+    font-size: 14px;
+    color: #333;
+    margin-top: 20px;
+    }
+
+    .footer-info img {
+    margin-top: 10px;
+    height: 40px;
+    }
+    
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="left">
+      <span>📍</span>
+      <input type="text" placeholder="Tìm kiếm">
+    </div>
+    <div class="logo">
+      <h1>My Store</h1>
+    </div>
+    <div class="right">
+      <div class="icon-circle" data-count="0">❤️</div>
+      <div class="icon-circle" data-count="0">🛍️</div>
+    </div>
+  </header>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="#">Về Chúng Tôi</a></li>
+      <li><a href="#">Bộ sưu tập</a></li>
+      <li><a href="#">Sản Phẩm</a>
+      <ul class="submenu">
+          <section class="product-collection">
+              <h2>Trang sức</h2>
+              <ul>
+                  <li>Bông Tai</li>
+                  <li>Nhẫn Nữ</li>
+                  <li>Mặt Dây Chuyền</li>
+                  <li>Bộ Trang Sức</li>
+                  <li>Dây Chuyền</li>
+                  <li>Lắc Tay</li>
+                  <li>Lắc Chân</li>
+                  <li>Charm Vàng 14K</li>
+              </ul>
+          </section>
+  
+          <section>
+              <h2>Trang sức cô dâu</h2>
+              <li>Bông tai cô dâu</li>
+              <li>Dây chuyền cô dâu</li>
+              <li>Bộ trang sức cô dâu</li>
+          </section>
+  
+          <section>
+              <h2>Nhẫn Cưới</h2>
+              <ul>
+                  <li>Nhẫn Cưới Dưới 7 Triệu</li>
+                  <li>Nhẫn Cưới 7 Triệu - 10 Triệu</li>
+                  <li>Nhẫn Cưới 10 Triệu - 15 Triệu</li>
+                  <li>Nhẫn Cưới 15 Triệu - 20 Triệu</li>
+                  <li>Nhẫn Cưới Từ 20 Triệu</li>
+              </ul>
+          </section>
+  
+          <section>
+              <h2>Nhẫn Cầu Hôn</h2>
+              <ul>
+                  <li>Nhẫn Cầu Hôn Dưới 5 Triệu</li>
+                  <li>Nhẫn Cầu Hôn 5 Triệu - 10 Triệu</li>
+                  <li>Nhẫn Cầu Hôn 10 Triệu - 20 Triệu</li>
+                  <li>Nhẫn Cầu Hôn Từ 20 Triệu</li>
+              </ul>
+          </section>
+  
+          <section class="services">
+              <h2>Quà tặng</h2>
+              <ul>
+                  <li>Quà Sinh Nhật</li>
+                  <li>Quà Kỷ Niệm</li>
+                  <li>Quà Cưới</li>
+              </ul>
+          </section>
+          <section class="gold-price">
+              <h2>Vàng 24K</h2>
+              <ul>
+                  <li>Vàng 24K</li>
+                  <li>Vàng Miếng</li>
+                  <li>Nhẫn 24K</li>
+              </ul>
+          </section>
+      </ul>
+      </li>
+      <li><a href="#">Tin Tức</a>
+          <ul>
+              <li>Tin khuyến mãi</li>
+              <li>Blog trang sức</li>
+              <li>Tin tuyển dụng</li>
+          </ul>
+      </li>    
+      <li><a href="#">Dịch Vụ</a>
+          <ul>
+              <li>Chính sách khách hàng thân thiết</li>
+              <li>Chính sách thu đổi</li>
+              <li>Chính sách giao hàng</li>
+              <li>Chính sách bảo hành</li>
+              <li>Thiệp cứu online</li>
+          </ul>
+      </li>
+      <li><a href="#">Giá Vàng Hôm Nay</a></li>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="#">Trang chủ</a> &gt; <a href="#">Danh mục</a> &gt; <span>Trang hiện tại</span>
+  </div>
+
+  <section>
+    <div class="slider-container">
+        <div class="slider" id="slider">
+          <img src="https://via.placeholder.com/1200x400?text=Ảnh+1" alt="Ảnh 1">
+          <img src="https://via.placeholder.com/1200x400?text=Ảnh+2" alt="Ảnh 2">
+          <img src="https://via.placeholder.com/1200x400?text=Ảnh+3" alt="Ảnh 3">
+        </div>
+    </div>
+
+    <div class="section-title">Sản phẩm mới</div>
+    <div class="products-container" id="product-list"></div>
+    <div class="pagination">
+      <button onclick="prevPage()">&laquo; Trước</button>
+      <button onclick="nextPage()">Tiếp &raquo;</button>
+    </div>
+
+    <div class="suggestion-box">
+      <button>Gợi ý sản phẩm</button>
+      <button>Xem ngay</button>
+    </div>
+
+    <div class="suggestion-box">
+      <button>Gợi ý sản phẩm</button>
+    </div>
+
+    <div class="section-title">Sản phẩm bán chạy nhất</div>
+    <div class="best-sellers">
+      <div class="policy-grid">
+        <div>Chính sách thu đổi</div>
+        <div>Chính sách bảo hành</div>
+        <div>Chính sách vận chuyển</div>
+        <div>Hướng dẫn đo size tay</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="custom-footer">
+        <div class="footer-top">
+          <div class="footer-col">
+            <p><strong>GỌI MUA HÀNG (Phím 1)</strong> (8:00 - 21:00)</p>
+            <h2>1900 633 428</h2>
+            <p>Tất cả các ngày trong tuần</p>
+            <br>
+            <p><strong>GÓP Ý, KHIẾU NẠI (Phím 3)</strong> (8:00 - 21:00)</p>
+            <h2>1900 633 428</h2>
+            <p>Tất cả các ngày trong tuần</p>
+          </div>
+          <div class="footer-col">
+            <p><strong>HỆ THỐNG SHOWROOM</strong></p>
+            <img src="https://via.placeholder.com/300x160?text=Showroom" alt="Showroom" />
+          </div>
+          <div class="footer-col">
+            <p><strong>FANPAGE CỦA CHÚNG TÔI</strong></p>
+            <img src="https://via.placeholder.com/300x160?text=Fanpage" alt="Fanpage" />
+          </div>
+        </div>
+      
+        <div class="footer-social">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook--v1.png"/></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png"/></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/youtube-play.png"/></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/zalo.png"/></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/tiktok.png"/></a>
+        </div>
+      
+        <div class="footer-info">
+          <p><strong>CÔNG TY TNHH VÀNG BẠC ĐÁ QUÝ HUY THÀNH</strong></p>
+          <p>Trụ sở chính: Số 23/100, phố Đội Cấn, Phường Đội Cấn, Quận Ba Đình, Thành phố Hà Nội, Việt Nam.</p>
+          <p>Điện thoại: 0437220777 - Fax: 0437338656 - Email: cskh@htj.vn</p>
+          <p>Giấy chứng nhận đăng ký doanh nghiệp: 0101892596 do Sở Kế hoạch & Đầu tư TP. Hà Nội cấp lần đầu ngày 02/03/2006.</p>
+          <img src="https://via.placeholder.com/120x40?text=Thông+Báo" alt="Đã Thông Báo">
+        </div>
+    </div>
+  </footer>
+
+  <script>
+     function setupSlider(id) {
+      const slider = document.getElementById(id);
+      const slides = slider.children;
+      let currentIndex = 0;
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }, 1000);
+    }
+
+    setupSlider('slider');
+    setupSlider('slider2');
+  </script>
+
+  <script>
+    const products = [
+      { title: 'Nhãn Cầu Hôn 14K', price: '8.129.000₫', img: 'https://via.placeholder.com/200x200?text=SP+1' },
+      { title: 'Nhãn Cầu Hôn 14K', price: '8.806.000₫', img: 'https://via.placeholder.com/200x200?text=SP+2' },
+      { title: 'Nhãn Cầu Hôn 14K', price: '8.806.000₫', img: 'https://via.placeholder.com/200x200?text=SP+3' },
+      { title: 'Nhãn Cưới 14K Evermore', price: '14.463.000₫', img: 'https://via.placeholder.com/200x200?text=SP+4' },
+      { title: 'Nhãn Cưới 14K Evermore', price: '12.564.000₫', img: 'https://via.placeholder.com/200x200?text=SP+5' },
+      { title: 'Nhãn Kim Cương', price: '9.999.000₫', img: 'https://via.placeholder.com/200x200?text=SP+6' },
+      { title: 'Nhãn Vàng Trắng', price: '7.888.000₫', img: 'https://via.placeholder.com/200x200?text=SP+7' }
+    ];
+
+    let currentPage = 0;
+    const itemsPerPage = 5;
+
+    function renderProducts() {
+      const start = currentPage * itemsPerPage;
+      const end = start + itemsPerPage;
+      const list = document.getElementById('product-list');
+      list.innerHTML = '';
+
+      products.slice(start, end).forEach(p => {
+        list.innerHTML += `
+          <div class="product">
+            <a href="#">
+              <img src="${p.img}" alt="${p.title}">
+              <div class="product-title">${p.title}</div>
+              <div class="product-price">${p.price}</div>
+            </a>
+          </div>`;
+      });
+    }
+
+    function nextPage() {
+      if ((currentPage + 1) * itemsPerPage < products.length) {
+        currentPage++;
+        renderProducts();
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        renderProducts();
+      }
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>

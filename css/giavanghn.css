@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: white;
+  }
+
+  .container-banggiavang {
+    padding: 40px 20px 0px 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 8px;
+    color: #1D2A3D;
+    text-align: center;
+  }
+
+  .container-banggiavang h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .container-banggiavang .timestamp,
+  .container-banggiavang .donvi {
+    font-size: 16px;
+    margin: 20px 0;
+    color: #1D2A3D;
+  }
+
+  table {
+    width: 100%;
+    margin: 30px auto;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
