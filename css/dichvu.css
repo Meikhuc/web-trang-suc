@@ -17,7 +17,8 @@
 
 .service-container{
     margin: 0px;
-    width: 100%;
+    width: 80%;
+    justify-self: center;
     padding: 0px;
     background: #fff;
     box-sizing: border-box;
@@ -33,4 +34,5 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     unicode-bidi: isolate;
+    text-align: justify;
 }

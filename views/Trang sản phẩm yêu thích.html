@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Sản phẩm yêu thích</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .favorites-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .heart-icon {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      color: red;
+    }
+    .empty-msg {
+      text-align: center;
+      font-size: 18px;
+      color: gray;
+      margin-top: 50px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 5px;
+      text-align: center;
+      display: inline-block;
+      width: 180px;
+      position: relative;
+    }
+    .product img {
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <script src="../scripts/linkHeader.js"></script>
+  <h2>Danh sách sản phẩm yêu thích</h2>
+  <div class="favorites-container" id="favorite-products"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("favorite-products");
+      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+      function renderFavorites() {
+        container.innerHTML = '';
+
+        if (favorites.length === 0) {
+          container.innerHTML = `<div class="empty-msg">Bạn chưa yêu thích sản phẩm nào!</div>`;
+          return;
+        }
+
+        favorites.forEach(p => {
+          container.innerHTML += `
+            <div class="product">
+              <span class="heart-icon" data-id="${p.id}">♥</span>
+              <img src="${p.img}" alt="${p.title}">
+              <div class="product-title">${p.title}</div>
+              <div class="product-price">${p.price}</div>
+            </div>`;
+        });
+
+        // Xử lý hủy yêu thích
+        document.querySelectorAll(".heart-icon").forEach(icon => {
+          icon.addEventListener("click", (e) => {
+            const id = parseInt(e.target.getAttribute("data-id"));
+            favorites = favorites.filter(p => p.id !== id);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            renderFavorites(); // cập nhật lại
+          });
+        });
+      }
+
+      renderFavorites();
+    });
+  </script>
+  <div id="footer"></div>
+  <script src="../scripts/linkFooter.js"></script>
+</body>
+</html>
