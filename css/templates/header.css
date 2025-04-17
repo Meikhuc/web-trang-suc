@@ -19,6 +19,14 @@ header .logo img {
     width: 150px;
 }
 
+header .logo a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
 header nav ul {
     list-style: none;
     padding: 0;
