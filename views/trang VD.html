@@ -1,63 +1,341 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Trang sản phẩm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông Tin Sản Phẩm</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../bo san pham css/sp1.css">
   <style>
-    .product { border: 1px solid #ddd; padding: 10px; margin: 10px; width: 200px; text-align: center; }
-    .heart { cursor: pointer; font-size: 20px; color: #999; }
-    .heart.active { color: red; }
+    .heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 26px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 10;
+  right: 140px;
+  top: 20px;
+}
+
+.heart-icon.active-heart {
+  color: red;
+}
   </style>
 </head>
 <body>
+    <div id="header"></div>
+    <script src="../scripts/linkHeader.js"></script>
 
-<h2>Danh sách sản phẩm</h2>
-<div id="products">
-  <!-- Sản phẩm mẫu -->
-  <div class="product" data-id="1" data-name="Nhẫn BEYOND" data-price="8172000" data-img="https://cdn.pnj.io/images/thumbnails/300/300/detailed/183/sp-gnddddw000449-nhan-cuoi-vang-trang-14k-dinh-da-moissanite-pnj-1.png">
-    <img src="https://cdn.pnj.io/images/thumbnails/300/300/detailed/183/sp-gnddddw000449-nhan-cuoi-vang-trang-14k-dinh-da-moissanite-pnj-1.png" width="150"><br>
-    Nhẫn BEYOND<br>
-    <span style="color: #e26678">8.172.000₫</span><br>
-    <span class="heart" onclick="toggleFavorite(this)">♥</span>
-  </div>
+    <!-- Phần chi tiết sản phẩm -->
+    <div class="product-container">
+      <div class="product-images">
+        <!-- Icon trái tim nằm trên ảnh chính -->
+        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        
+        <!-- Ảnh chính -->
+        <img class="main-img" src="https://cdn.huythanhjewelry.vn/storage/photos/shares/01upload/1716344629/nc841w6_1716515893.png" alt="Nhẫn vàng 14k">
+  
+        <!-- Thumbnail -->
+        <div class="thumbnails">
+          <img src="https://cdn.huythanhjewelry.vn/storage/photos/shares/01upload/1716344629/nc841w6_1716515893.png" alt="Ảnh 1" onclick="changeMainImage(this.src)">
+          <img src="https://cdn.huythanhjewelry.vn/storage/rs300/shares/01upload/1716344629/nc841w8_1716515893.png.webp" alt="Ảnh 2" onclick="changeMainImage(this.src)">
+          <img src="https://cdn.huythanhjewelry.vn/storage/photos/shares/01upload/1716344629/nc841w6_1716515893.png" alt="Ảnh 3" onclick="changeMainImage(this.src)">
+        </div>
+        </div>
+        <div class="product-details">
+        <p><strong>PROMIS</strong></p>
+        <h1>Nhẫn cưới Vàng 14K đá CZ</h1>
+        <p>Mã sản phẩm: <strong>NC841W</strong></p>
+        <div class="price">4.679.000₫</div>
 
-  <!-- Thêm nhiều sản phẩm khác tại đây -->
-</div>
+        <div class="sizes">
+            <p><strong>Chọn size nhẫn:</strong></p>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>10</button>
+            <button>11</button>
+        </div>
 
+        <div class="colors">
+            <p><strong>Chọn màu sắc:</strong></p>
+            <button onclick="selectColor(this)" class="selected">Vàng</button>
+            <button onclick="selectColor(this)">Trắng</button>
+            <button onclick="selectColor(this)">Hồng</button>
+        </div>
+
+        <div class="quantity">
+            <span>Số lượng:</span>
+            <div class="quantity-box">
+            <button onclick="adjustQty(-1)">-</button>
+            <input type="text" id="quantity" value="1">
+            <button onclick="adjustQty(1)">+</button>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="buy-now">MUA NGAY</button>
+            <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+        </div>
+
+        <div class="installments">
+            <button>Trả góp 3 tháng<br>(Chỉ từ 1.559.666₫/tháng)</button>
+            <button>Trả góp 6 tháng<br>(Chỉ từ 779.833₫/tháng)</button>
+        </div>
+
+        <div class="benefits">
+            <div class="exchange">Đổi miễn phí trong 72 giờ</div>
+            <div class="shipping">Miễn phí giao hàng toàn quốc</div>
+            <div class="installment">Trả góp 0%</div>
+            <div class="warranty">Bảo hành trọn đời</div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Phần quà tặng kèm -->
+    <div class="gift-section">
+        <h2>Quà tặng kèm</h2>
+        <div class="container">
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/uploads/qua-tangweb-14-1_1737097659.jpg.webp" alt="Thiệp cưới">
+        <p>Thiệp cưới</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-section">
+        <ul class="footer-links">
+        <li class="tab active" data-tab="product-detail">Chi tiết sản phẩm</li> |
+        <li class="tab" data-tab="warranty">Chính sách bảo hành</li>  |
+        <li class="tab" data-tab="exchange">Chính sách thu đổi</li>
+        </ul>
+    </div>
+
+    <div id="product-detail" class="tab-content active">
+        <!-- Thông tin nhẫn cưới nữ nằm giữa trang -->
+        <div class="information">
+        <h2>Thông tin nhẫn cưới nữ</h2>
+        <img src="https://cdn.huythanhjewelry.vn/storage/photos/shares/01upload/1716344629/nc841w6_1716515893.png" alt="Nhẫn cưới nữ">
+        <div class="information-sp">
+            <ul class="list">
+            <li>
+                <div class="label">Mã sản phẩm:</div>
+                <span>NC841W</span>
+            </li>
+            <li>
+                <div class="label">Chất liệu:</div>
+                <span>14K</span>
+            </li>
+            </ul>
+        </div>
+        </div>
+    
+        <!-- Đặc quyền -->
+        <div style="text-align: center; margin: 60px 0 40px;">
+        <h3 style="color: #ec4c4c; font-weight: bold;">ĐẶC QUYỀN KHI BẠN MUA NHẪN CƯỚI<br>TẠI HUY THANH JEWELRY</h3>
+        <p style="color: #ec4c4c; font-size: 14px; margin-top: 10px;">Thiết kế độc quyền, dẫn đầu xu hướng</p>
+        </div>
+    
+        <!-- Nội dung ẩn và nút xem thêm -->
+        <div style="text-align: center; margin-bottom: 60px;">
+        <div id="moreInfo" style="display: none; margin-top: 20px; font-size: 14px; color: #444; max-width: 600px; margin: 0 auto;">
+            <img src="https://huythanhjewelry.vn/img/usp/1733126550_USP%20nh%E1%BA%ABn%20c%C6%B0%E1%BB%9Bi.jpg" alt="Thiết kế nhẫn" style="max-width: 400px; margin-top: 20px;">
+            <p>Chiếc nhẫn cưới nữ NC841W được chế tác từ vàng 14K kết hợp cùng đá CZ lấp lánh, thiết kế tinh tế với các đường nét uốn lượn hiện đại. Đây là biểu tượng của tình yêu vĩnh cửu, được nhiều cặp đôi lựa chọn cho ngày trọng đại của mình.</p>
+        </div>
+        <button id="toggleButton" onclick="toggleMoreInfo()" style="padding: 10px 20px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; margin-top: 20px;">Xem Thêm</button>
+        </div>
+    </div>
+
+    <div id="warranty" class="tab-content">
+        <div class="tab-content-container">
+        <h2>1. DỊCH VỤ BẢO HÀNH MIỄN PHÍ</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Nội dung</th>
+                <th>Thời gian</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr><td>Làm sạch sản phẩm tại cửa hàng</td><td>Trọn đời</td></tr>
+                <tr><td>Đánh bóng và xi mới</td><td>05 lần</td></tr>
+                <tr><td>Gắn đá CZ</td><td>Trọn đời</td></tr>
+                <tr><td>Gắn kim cương/ đá màu/ ngọc trai (chưa bao gồm viên)</td><td>Miễn phí công gắn</td></tr>
+                <tr><td>Gắn đá Moissanite từ 0.8 - 3.0 mm</td><td>Trọn đời</td></tr>
+                <tr><td>Chỉnh size tay, khắc tên</td><td>Trọn đời</td></tr>
+                <tr><td>Hàn dây, sửa khoá (không bao gồm thay mới)</td><td>01 lần</td></tr>
+            </tbody>
+        </table>
+        <p><em>Bảng 1.1</em></p>
+
+        <h2>2. DỊCH VỤ BẢO HÀNH TÍNH PHÍ</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Nội dung bảo hành</th>
+                <th>Chi phí bảo hành</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr><td>Sửa độ rung ladanse</td><td>100.000đ</td></tr>
+                <tr><td>Nắn lại nhẫn (tuỳ tình trạng), đánh bóng, xi mới</td><td>50.000đ</td></tr>
+                <tr><td>Cắt dây/hàn dây: cắt, đốt, hàn, đánh bóng, xi mới (chưa bao gồm vàng thêm)</td><td>70.000đ + phí vàng thêm</td></tr>
+                <tr><td>Nhẫn thay đai, sản phẩm thêm chi tiết (chưa bao gồm vàng thêm)</td><td>70.000đ + phí vàng thêm</td></tr>
+            </tbody>
+        </table>
+        <p><em>Bảng 2.1</em></p>
+
+        <div class="note">
+            <h2>LƯU Ý:</h2>
+            <ul>
+                <li>Thời gian sửa chữa: 3 - 5 ngày làm việc (Nhẫn thay đai, sản phẩm thêm chi tiết 7 ngày làm việc)</li>
+                <li>Đối với các hoạt động bảo hành, Huy Thanh áp dụng bảo hành điện tử bằng việc tra cứu thông tin trên hệ thống phần mềm</li>
+                <li>Các dịch vụ bảo hành, sửa chữa sản phẩm (làm mới, chỉnh size,...) có thể giảm về trọng lượng so với ban đầu do bị hao mòn trong thời gian sử dụng và quy trình làm mới sản phẩm <span>(Hạn mức hao mòn: 6%)</span></li>
+                <li>Vàng là kim loại mềm, dễ bị xước và hỏng hình dạng khi đeo trong thời gian dài. Vui lòng không đeo trang sức trong lúc hoạt động mạnh và bẻ vặn</li>
+            </ul>
+        </div>
+
+        <hr>
+        <div class="lienhe">
+            <p>Trụ sở: 23/100 Đội Cấn, Ba Đình, Hà Nội, Việt Nam</p>
+            <p>Website: <a href="https://huythanhjewelry.vn">https://huythanhjewelry.vn</a></p>
+            <p>FB Page: <a href="https://www.facebook.com/huythanhjewelry">facebook.com/huythanhjewelry</a></p>
+            <p>Hotline giải đáp thắc mắc: 1900 633 428</p>
+        </div>
+        </div>
+    </div>
+
+    <div id="exchange" class="tab-content">
+        <strong style="color: #f15a5a; font-size: 20px;">1. ĐỐI VỚI SẢN PHẨM CÒN NGUYÊN VẸN</strong>
+        <p style="max-width: 800px; margin-bottom: 20px; justify-content: center; vertical-align: middle;">Sản phẩm còn nguyên vẹn, đủ hoá đơn và chứng thư kiểm định (áp dụng với kim cương trên 3.0mm), thu mua theo bảng sau:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" rowspan="1">Dòng sản phẩm</th>
+                    <th>Điều kiện áp dụng</th>
+                    <th>Tỉ lệ đổi hàng</th>
+                    <th>Tỉ lệ mua lại</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th colspan="2" rowspan="1">Trang sức vàng 10k - 14k - 18k</th>
+                    <td>Sản phẩm còn nguyên vẹn</td>
+                    <td>80%</td>
+                    <td>70%</td>
+                </tr>
+                <tr>
+                    <th colspan="2" rowspan="1">Trang sức Charm</th>
+                    <td>Sản phẩm còn nguyên vẹn</td>
+                    <td>70%</td>
+                    <td>60%</td>
+                </tr>
+                <tr>
+                    <th colspan="2" rowspan="1">Trang sức 24K</th>
+                    <td colspan="3" rowspan="1">Thu đổi theo giá thời điểm</td>
+                </tr>
+                <tr>
+                    <th colspan="1" rowspan="4"><p>Kim cương viên</p></th>
+                    <th>Dưới 3.0 mm</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th rowspan="2" colspan="1">Từ 3.0 mm đến dưới 4.50 mm</th>
+                    <td>Trang sức đi kèm còn nguyên vẹn</td>
+                    <td>80%</td>
+                    <td>70%</td>
+                </tr>
+                <tr>
+                    <td>Trang sức đi kèm không còn nguyên vẹn</td>
+                    <td>65%</td>
+                    <td>60%</td>
+                    </tr>
+                <tr>
+                    <th>Từ 4.50 mm trở lên</th>
+                    <td></td>
+                    <td>85%</td>
+                    <td>80%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+function toggleFavorite() {
+  const icon = document.getElementById('favorite-icon');
+  icon.classList.toggle('active-heart');
+}
+
+
+      window.addEventListener('DOMContentLoaded', () => {
+  const icon = document.getElementById('favorite-icon');
+  const isActive = localStorage.getItem('favorite') === 'true';
+  if (isActive) {
+    icon.classList.add('active-heart');
+  }
+});
+
+function toggleFavorite() {
+  const icon = document.getElementById('favorite-icon');
+  icon.classList.toggle('active-heart');
+  localStorage.setItem('favorite', icon.classList.contains('active-heart'));
+}
+
+
+    </script>
 <script>
-  function toggleFavorite(el) {
-    const card = el.closest('.product');
-    const id = card.dataset.id;
+  const product = {
+    id: 1001,
+    title: 'Nhẫn vàng 14k',
+    price: '8.129.000₫',
+    img: 'https://cdn.huythanhjewelry.vn/storage/photos/shares/01upload/1716344629/nc841w6_1716515893.png'
+  };
 
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  document.addEventListener("DOMContentLoaded", () => {
+    const icon = document.getElementById("favorite-icon");
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    if (favorites.some(p => p.id === id)) {
-      favorites = favorites.filter(p => p.id !== id);
-      el.classList.remove('active');
-    } else {
-      favorites.push({
-        id: id,
-        name: card.dataset.name,
-        price: card.dataset.price,
-        img: card.dataset.img
-      });
-      el.classList.add('active');
+    function isFavorite(id) {
+      return favorites.some(p => p.id === id);
     }
 
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }
-
-  // Tô đỏ những sản phẩm đã thích khi tải lại
-  window.onload = function () {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    document.querySelectorAll('.product').forEach(card => {
-      const id = card.dataset.id;
-      if (favorites.some(p => p.id === id)) {
-        card.querySelector('.heart').classList.add('active');
+    function updateHeartIcon() {
+      if (isFavorite(product.id)) {
+        icon.classList.add("active-heart");
+      } else {
+        icon.classList.remove("active-heart");
       }
-    });
-  };
+    }
+
+    window.toggleFavorite = () => {
+      const exists = isFavorite(product.id);
+      if (exists) {
+        favorites = favorites.filter(p => p.id !== product.id);
+      } else {
+        favorites.push(product);
+      }
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+      updateHeartIcon();
+    };
+
+    updateHeartIcon();
+  });
+
+  function changeMainImage(src) {
+    document.querySelector('.main-img').src = src;
+  }
 </script>
+
+
+    <script src="/root/scripts/bo san pham.js"></script>
+    
+    <script src="/root/scripts/Thông tin sp.js"></script>
+
+    <div id="footer"></div>
+    <script src="../scripts/linkFooter.js"></script>
 </body>
 </html>

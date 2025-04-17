@@ -1,16 +1,19 @@
 .product-container {
     display: flex;
     padding: 40px;
-    gap: 60px;
+    gap: 20px;
   }
   .product-images {
     flex: 1;
+    position: relative; /* Thêm dòng này để trái tim căn theo khung ảnh */
   }
+  
   .product-images img.main-img {
     width: 100%;
-    max-width: 450px;
+    max-width: 600px;
     display: block;
     margin-bottom: 20px;
+    border: #333 solid 1px;
   }
   /* Thumbnails dưới ảnh chính */
   .thumbnails {
