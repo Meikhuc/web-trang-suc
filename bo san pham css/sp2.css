@@ -1,0 +1,321 @@
+.product-container {
+    display: flex;
+    padding: 40px;
+    gap: 20px;
+  }
+  .product-images {
+    flex: 1;
+    position: relative; /* Thêm dòng này để trái tim căn theo khung ảnh */
+  }
+  
+  .product-images img.main-img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin-bottom: 20px;
+    border: #333 solid 1px;
+  }
+  /* Thumbnails dưới ảnh chính */
+  .thumbnails {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .thumbnails img {
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+  }
+  .thumbnails img:hover {
+    border: 1px solid #ec4c4c;
+  }
+  .product-details {
+    flex: 1;
+  }
+  .product-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .price {
+    color: #ec4c4c;
+    font-size: 26px;
+    margin: 10px 0;
+  }
+  .sizes button, .colors button {
+    padding: 8px 14px;
+    margin: 5px 5px 0 0;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+  }
+  .colors button.selected {
+    border: 2px solid #ec4c4c;
+    font-weight: bold;
+  }
+  .quantity {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+  }
+  .quantity span {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  .quantity-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .quantity-box button {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    border: none;
+    background: #f9f9f9;
+    cursor: pointer;
+  }
+  .quantity-box input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+  }
+  .actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  .actions .buy-now {
+    background-color: #ec4c4c;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    flex: 1;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+  .actions .add-to-cart {
+    border: 1px solid #ec4c4c;
+    background: white;
+    color: #ec4c4c;
+    padding: 16px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+  .add-to-cart::before {
+    content: "\1F6CD";
+  }
+  .installments {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  .installments button {
+    padding: 12px;
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .benefits {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 16px;
+    font-size: 14px;
+  }
+  .benefits div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .benefits .exchange::before { content: "\21BA"; }
+  .benefits .shipping::before { content: "\1F69A"; }
+  .benefits .installment::before { content: "\1F4B3"; }
+  .benefits .warranty::before { content: "\2699"; }
+  .gift-section {
+    margin-top: 20px;
+    padding: 40px;
+    border-top: 1px solid #ddd;
+  }
+  .gift-section .container{
+    max-width: 15%;
+    margin: 0px 0px 25px;
+    padding: 5px;
+  }
+  .gift-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .gift-section img {
+    max-width: 300px;
+    width: 100%;
+    display: block;
+  }
+  .gift-section p {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    font-family: MuliDisplayVN;
+  }
+  .footer-section {
+    border-bottom: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  .footer-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0px;
+    font-size: 14px;
+    color: #333;
+    font-family: MuliDisplayVN;
+  }
+  .footer-links li {
+    color: #333;
+    margin: 0 12px;
+    text-decoration: none;
+  }
+  .information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .information img{
+    max-width: 220px;
+    margin: 20px 0;
+  }
+  .information-sp{
+    max-width: 600px;
+    padding: 0 24px;
+  }
+  .information-sp .list{
+    width: 552px;
+    margin: 14px auto 0;
+    padding: 0;
+    list-style: none;
+  }
+  .information-sp ul li{
+    justify-content: space-between;
+    margin: 15px auto;
+    border-bottom: 1px solid rgba(94, 53, 47, 0.19);
+  }
+  .information-sp ul.list li{
+    display: flex;
+    font-family: MuliDisplayVN;
+    color: black;
+    line-height: 1.5;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .label{
+    min-width: 120px;
+    text-align: left;
+    line-height: 1.5;
+  }
+  .information-sp ul.list span{
+    width: 65px;
+    text-align: right;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content p{
+    text-align: center;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  .tab.active {
+    font-weight: 1000;
+  }  
+  /* Chinh sach bao hanh */
+  .tab-content-container{
+    flex-direction: column;
+    text-align: left;
+    margin-top: 40px;
+  }
+  h2 {
+    color: #f07e74;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  th, td {
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    text-align: left;
+    font-family: MuliDisplayVN;
+  }
+  th {
+    color: #f07e74;
+    font-weight: 600;
+  }
+  .tab-content p em{
+    font-weight: 300;
+    font-family: MuliDisplayVN;
+    font-style: normal;
+  }
+  .note {
+    margin-top: 40px;
+  }
+  .note ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .note li {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
+  .note span {
+    color: #f07e74;
+  }
+  .note hr {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 20px 0;
+  }
+  .lienhe {
+    margin-top: 30px;
+  }
+  .lienhe p{
+    text-align: left;
+  }
+  /* Chinh sach thu doi */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+
+  th, td {
+    border: 1px solid #eee;
+    padding: 14px;
+    text-align: left;
+  }
+
+  th {
+    color: #f15a5a;
+    font-weight: 500;
+  }    
