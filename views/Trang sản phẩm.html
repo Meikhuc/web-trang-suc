@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/bosuutap.css">
+  <link rel="stylesheet" href="../css/sp.css">
+  <link rel="stylesheet" href="../css/heart-icon-sp.css">
+  <title>Trang Sản Phẩm</title>
+  <style>
+    * {
+      box-sizing: border-box; /*ngăn đè hộp*/
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+    <div id="header"></div>
+    <script src="../scripts/linkHeader.js"></script>
+  
+    <div class="breadcrumb">
+        <a href="#">Trang chủ</a> &gt; <a href="#">Danh mục</a> &gt; <span>Trang hiện tại</span>
+    </div>
+
+    <div class="bo-loc-container">
+      <div class="toolbar">
+          <div class="filter-group">
+          <span class="filter-title">Bộ lọc :</span>
+
+          <div class="dropdown" id="priceDropdown">
+              <button class="dropbtn">Khoảng giá ▼</button>
+              <div class="dropdown-content">
+                  <label><input type="checkbox"> Nhỏ hơn 5.000.000đ</label>
+                  <label><input type="checkbox"> Từ 5.000.000đ - 7.000.000đ</label>
+                  <label><input type="checkbox"> Từ 7.000.000đ - 10.000.000đ</label>
+                  <label><input type="checkbox"> Từ 10.000.000đ - 15.000.000đ</label>
+                  <label><input type="checkbox"> Từ 15.000.000đ - 20.000.000đ</label>
+                  <label><input type="checkbox"> Lớn hơn 20.000.000đ</label>
+              </div>
+          </div>
+
+          <div class="dropdown">
+              <button class="dropbtn">Màu sắc ▼</button>
+              <div class="dropdown-content">
+                  <label><input type="checkbox"> Vàng</label>
+                  <label><input type="checkbox"> Vàng Trắng</label>
+                  <label><input type="checkbox"> Vàng Hồng</label>
+              </div>
+          </div>
+
+          <div class="dropdown">
+              <button class="dropbtn">Chất liệu ▼</button>
+              <div class="dropdown-content">
+                  <label><input type="checkbox"> 10k</label>
+                  <label><input type="checkbox"> 14k</label>
+                  <label><input type="checkbox"> 18k</label>
+              </div>
+          </div>
+
+          <div class="dropdown">
+              <button class="dropbtn">Đá ▼</button>
+              <div class="dropdown-content">
+                  <label><input type="checkbox"> Đá CZ</label>
+                  <label><input type="checkbox"> Đá Moissanite</label>
+                  <label><input type="checkbox"> Ngọc Trai</label>
+                  <label><input type="checkbox"> Kim cương lab-grown</label>
+                  <label><input type="checkbox"> Kim cương tự nhiên</label>
+              </div>
+          </div>
+      </div>
+
+      <div class="sort-section">
+          <label for="sort-select" style="font-weight: bold;">Sắp xếp:</label>
+          <select id="sort-select">
+              <option>Sản phẩm mới nhất</option>
+              <option>Giá thấp đến cao</option>
+              <option>Giá cao đến thấp</option>
+          </select>
+          </div>
+      </div>
+  </div>
+
+  <div class="container">
+    <div class="main-product-bst">
+      <!-- Icon trái tim nằm trên ảnh chính -->
+      <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+      <img src="https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1740984846/ptb400vv_1741070718.png.webp" alt="Dây chuyền bướm" />
+      <div class="info">
+        <div class="main-badge">🎁 Quà tặng 0đ</div>
+        <div class="main-badge">🚚 Freeship</div>
+        <h4>CRYSTAL HAVEN</h4>
+        <p>Nhẫn cầu hôn Vàng 18K Kim cương Lab-grown</p>
+        <div class="price">30.695.000₫</div>
+      </div>
+    </div>
+
+    <div class="related-product-bsts">
+      <!-- product-bst item 1 -->
+      <div class="product-bst-item">
+        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 1" />
+        <div class="info">
+          <div class="badge">🎁 Quà tặng 0đ</div>
+          <div class="badge">🚚 Freeship</div>
+          <h4>EVERMORE</h4>
+          <p>Nhẫn cầu hôn Vàng 18K Kim cương Lab-grown</p>
+          <div class="price">30.695.000₫</div>
+        </div>
+      </div>
+      <div class="product-bst-item">
+        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cưới" />
+        <div class="info">
+          <div class="badge">🎁 Quà tặng 0đ</div>
+          <div class="badge">🚚 Freeship</div>
+          <h4>EVERMORE</h4>
+          <p>Nhẫn cưới Vàng 14K Kim cương Lab-grown</p>
+          <div class="price">9.200.000₫</div>
+        </div>
+      </div>
+      <div class="product-bst-item">
+        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 2" />
+        <div class="info">
+          <div class="badge">🎁 Quà tặng 0đ</div>
+          <div class="badge">🚚 Freeship</div>
+          <h4>BEYOND</h4>
+          <p>Nhẫn cầu hôn Vàng 14K đá Moissanite</p>
+          <div class="price">8.273.000₫</div>
+        </div>
+      </div>
+      <div class="product-bst-item">
+        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 2" />
+        <div class="info">
+          <div class="badge">🎁 Quà tặng 0đ</div>
+          <div class="badge">🚚 Freeship</div>
+          <h4>BEYOND</h4>
+          <p>Nhẫn cầu hôn Vàng 14K đá Moissanite</p>
+          <div class="price">8.273.000₫</div>
+        </div>
+      </div>
+      <div class="product-bst-item">
+        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 2" />
+        <div class="info">
+          <div class="badge">🎁 Quà tặng 0đ</div>
+          <div class="badge">🚚 Freeship</div>
+          <h4>BEYOND</h4>
+          <p>Nhẫn cầu hôn Vàng 14K đá Moissanite</p>
+          <div class="price">8.273.000₫</div>
+        </div>
+      </div>
+      <div class="product-bst-item">
+        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 2" />
+        <div class="info">
+          <div class="badge">🎁 Quà tặng 0đ</div>
+          <div class="badge">🚚 Freeship</div>
+          <h4>BEYOND</h4>
+          <p>Nhẫn cầu hôn Vàng 14K đá Moissanite</p>
+          <div class="price">8.273.000₫</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+  <script src="../scripts/linkFooter.js"></script>
+
+  <script src="../scripts/kich hoat icon trai tim.js"></script>
+
+  <script src="../scripts/dua du vao sp yeu thich.js"></script>
+
+  <script src="../scripts/sp.js"></script>
+</body>
+</html>
