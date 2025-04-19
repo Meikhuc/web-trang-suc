@@ -49,15 +49,15 @@
         <p><strong>PROMIS</strong></p>
         <h1>Nhẫn cưới Vàng 14K đá CZ</h1>
         <p>Mã sản phẩm: <strong>NC841W</strong></p>
-        <div class="price">4.679.000₫</div>
+        <div class="price">8.129.000₫</div>
 
         <div class="sizes">
             <p><strong>Chọn size nhẫn:</strong></p>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>10</button>
-            <button>11</button>
+            <button onclick="selectSize(this)" class="selected">7</button>
+            <button onclick="selectSize(this)">8</button>
+            <button onclick="selectSize(this)">9</button>
+            <button onclick="selectSize(this)">10</button>
+            <button onclick="selectSize(this)">11</button>
         </div>
 
         <div class="colors">
@@ -264,76 +264,41 @@
             </tbody>
         </table>
     </div>
+
+    <script src="/scripts/kich hoat icon trai tim.js"></script>
+     
     <script>
-        function toggleFavorite() {
-        const icon = document.getElementById('favorite-icon');
-        icon.classList.toggle('active-heart');
-        }
-
-
-            window.addEventListener('DOMContentLoaded', () => {
-        const icon = document.getElementById('favorite-icon');
-        const isActive = localStorage.getItem('favorite') === 'true';
-        if (isActive) {
-            icon.classList.add('active-heart');
-        }
-        });
-
-        function toggleFavorite() {
-        const icon = document.getElementById('favorite-icon');
-        icon.classList.toggle('active-heart');
-        localStorage.setItem('favorite', icon.classList.contains('active-heart'));
-        }
-
-
-    </script>
-    <script>
+        //Dua du lieu vao trang sp yeu thich
         const product = {
             id: 1001,
             title: 'Nhẫn vàng 14k',
             price: '8.129.000₫',
             img: 'https://cdn.huythanhjewelry.vn/storage/photos/shares/01upload/1716344629/nc841w6_1716515893.png'
         };
+    </script>
+    <script src="/scripts/dua du vao sp yeu thich.js"></script>
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const icon = document.getElementById("favorite-icon");
-            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-            function isFavorite(id) {
-            return favorites.some(p => p.id === id);
-            }
-
-            function updateHeartIcon() {
-            if (isFavorite(product.id)) {
-                icon.classList.add("active-heart");
-            } else {
-                icon.classList.remove("active-heart");
-            }
-            }
-
-            window.toggleFavorite = () => {
-            const exists = isFavorite(product.id);
-            if (exists) {
-                favorites = favorites.filter(p => p.id !== product.id);
-            } else {
-                favorites.push(product);
-            }
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            updateHeartIcon();
+    <script src="/scripts/bo san pham.js">
+        // Thêm vào giỏ hàng
+        window.addToCart = function () {
+            const product = {
+            name: "Nhẫn cưới Vàng 14K đá CZ",
+            img: document.querySelector(".main-img").src,
+            price: 8129000,
+            size: selectedSize,
+            quantity: parseInt(document.getElementById("quantity").value) || 1,
+            color: selectedColor,
+            date: new Date().toLocaleDateString("vi-VN")
             };
 
-            updateHeartIcon();
-        });
-
-        function changeMainImage(src) {
-            document.querySelector('.main-img').src = src;
-        }
+            const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+            cart.push(product);
+            localStorage.setItem("cartItems", JSON.stringify(cart));
+            alert("Đã thêm sản phẩm vào giỏ hàng!");
+        };
     </script>
-
-
-    <script src="/scripts/bo san pham.js"></script>
     
-    <script src="/scripts/Thông tin sp.js"></script>
+    <script src="/scripts/chuyen tab trong tt sp.js"></script>
 
     <div id="footer"></div>
     <script src="../scripts/linkFooter.js"></script>

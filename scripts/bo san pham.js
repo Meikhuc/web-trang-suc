@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let selectedColor = "Vàng";
+    let selectedSize="7";
   
     // Tăng/giảm số lượng
     window.adjustQty = function (change) {
@@ -9,29 +10,20 @@ document.addEventListener("DOMContentLoaded", function () {
       qtyInput.value = value < 1 ? 1 : value;
     };
   
+    // Chọn size
+    window.selectSize = function (button) {
+      document.querySelectorAll(".sizes button").forEach(btn => btn.classList.remove("selected"));
+      button.classList.add("selected");
+      selectedSize = button.textContent;
+    };
+
     // Chọn màu
     window.selectColor = function (button) {
       document.querySelectorAll(".colors button").forEach(btn => btn.classList.remove("selected"));
       button.classList.add("selected");
       selectedColor = button.textContent;
     };
-  
-    // Thêm vào giỏ hàng
-    window.addToCart = function () {
-      const product = {
-        name: "Nhẫn cưới Vàng 14K đá CZ",
-        img: document.querySelector(".main-img").src,
-        price: 4679000,
-        quantity: parseInt(document.getElementById("quantity").value) || 1,
-        color: selectedColor,
-        date: new Date().toLocaleDateString("vi-VN")
-      };
-      const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-      cart.push(product);
-      localStorage.setItem("cartItems", JSON.stringify(cart));
-      alert("Đã thêm sản phẩm vào giỏ hàng!");
-    };
-  
+
     // Xem thêm / thu gọn mô tả
     window.toggleMoreInfo = function () {
       const info = document.getElementById("moreInfo");

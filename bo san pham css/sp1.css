@@ -52,7 +52,7 @@
     background: #fff;
     cursor: pointer;
   }
-  .colors button.selected {
+  .sizes button.selected , .colors button.selected {
     border: 2px solid #ec4c4c;
     font-weight: bold;
   }
