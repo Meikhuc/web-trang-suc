@@ -6,6 +6,7 @@
   <title>Thông Tin Sản Phẩm</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../bo san pham css/sp1.css">
+  <link rel="stylesheet" href="../css/heart-icon(bo sp).css">
   <style>
     .heart-icon {
         position: absolute;
@@ -50,7 +51,7 @@
         <h1>Dây chuyền cầu hôn</h1>
         <p>Mã sản phẩm: <strong>NC1553W</strong></p>
         <div class="price">3.579.000₫</div>
-<!--
+
         <div class="sizes">
             <p><strong>Chọn size nhẫn:</strong></p>
             <button>7</button>
@@ -59,16 +60,14 @@
             <button>10</button>
             <button>11</button>
         </div>
-    -->
-<!--
+    
+
         <div class="colors">
             <p><strong>Chọn màu sắc:</strong></p>
             <button onclick="selectColor(this)" class="selected">Vàng</button>
             <button onclick="selectColor(this)">Trắng</button>
             <button onclick="selectColor(this)">Hồng</button>
         </div>
-        -->
-        <div>Màu sắc: Trắng</div>
 
         <div class="quantity">
             <span>Số lượng:</span>
@@ -120,7 +119,7 @@
         <!-- Thông tin nhẫn cưới nữ nằm giữa trang -->
         <div class="information">
         <h2>Thông tin dây chuyền nữ</h2>
-        <img src="https://cdn.huythanhjewelry.vn/storage/photos/shares/01upload/1716344629/nc841w6_1716515893.png" alt="Nhẫn cưới nữ">
+        <img src="https://tnj.vn/15494-large_default/day-chuyen-bac-nu-mat-trai-tim-chu-love-dinh-da-dep-dcn0421.jpg" alt="Nhẫn cưới nữ">
         <div class="information-sp">
             <ul class="list">
             <li>
@@ -267,76 +266,32 @@
             </tbody>
         </table>
     </div>
+
+    <script src="../scripts/kich_hoat_icon_trai_tim.js"></script>
+     
     <script>
-        function toggleFavorite() {
-        const icon = document.getElementById('favorite-icon');
-        icon.classList.toggle('active-heart');
-        }
-
-
-            window.addEventListener('DOMContentLoaded', () => {
-        const icon = document.getElementById('favorite-icon');
-        const isActive = localStorage.getItem('favorite') === 'true';
-        if (isActive) {
-            icon.classList.add('active-heart');
-        }
-        });
-
-        function toggleFavorite() {
-        const icon = document.getElementById('favorite-icon');
-        icon.classList.toggle('active-heart');
-        localStorage.setItem('favorite', icon.classList.contains('active-heart'));
-        }
-
-
-    </script>
-    <script>
+        //Dua du lieu vao trang sp yeu thich
         const product = {
             id: 1001,
             title: 'Dây chuyền 14k',
-            price: '3.539.000₫',
-            img: 'https/cdn.huythanhjewelry.vn/storage/photos/shares/01upload/1716344629/nc841w6_1716515893.png'
+            price: '3.579.000₫',
+            img: 'https://tnj.vn/15494-large_default/day-chuyen-bac-nu-mat-trai-tim-chu-love-dinh-da-dep-dcn0421.jpg'
         };
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const icon = document.getElementById("favorite-icon");
-            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-            function isFavorite(id) {
-            return favorites.some(p => p.id === id);
-            }
-
-            function updateHeartIcon() {
-            if (isFavorite(product.id)) {
-                icon.classList.add("active-heart");
-            } else {
-                icon.classList.remove("active-heart");
-            }
-            }
-
-            window.toggleFavorite = () => {
-            const exists = isFavorite(product.id);
-            if (exists) {
-                favorites = favorites.filter(p => p.id !== product.id);
-            } else {
-                favorites.push(product);
-            }
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            updateHeartIcon();
-            };
-
-            updateHeartIcon();
-        });
-
-        function changeMainImage(src) {
-            document.querySelector('.main-img').src = src;
-        }
     </script>
 
+    <script src="../scripts/dua_du_lieu_vao_sp_yeu_thich.js"></script>
 
-    <script src="/scripts/bo san pham.js"></script>
+    <script>
+        window.product = {
+        name: "Dây chuyền 14k",
+        img: "https://tnj.vn/15494-large_default/day-chuyen-bac-nu-mat-trai-tim-chu-love-dinh-da-dep-dcn0421.jpg",
+        price: 3579000
+    };
+    </script>
+
+    <script src="../scripts/bo_san_pham.js"></script>
     
-    <script src="/scripts/Thông tin sp.js"></script>
+    <script src="../scripts/chuyen_tab_trong_tt_sp.js"></script>
 
     <div id="footer"></div>
     <script src="../scripts/linkFooter.js"></script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/gio hang1.css">
+    <link rel="stylesheet" href="../css/giohang.css">
     <title>My Store</title>
 </head>
 <body>
@@ -15,26 +15,20 @@
         <div class="cart" id="cart-container">
             <h2 id="cart-title">GIỎ HÀNG CỦA BẠN</h2>
             <!-- Cart items được thêm động -->
-            <div class="gift-section" style="display: none">
-                <p>Chọn quà tặng đi kèm sản phẩm (đã có 2 phần quà trong giỏ):</p>
-                <div>
-                <input type="checkbox" id="gift1">
-                <label for="gift1">Thiệp cưới</label>
-                </div>
-                <div>
-                <input type="checkbox" id="gift2">
-                <label for="gift2">Thiệp tỏ tình</label>
-                </div>
+            <div class="gift-section">
+                <p style="margin-bottom: 10px;">Quà tặng (Có 2 phần quà trong giỏ hàng)</p>
+                <label><input type="checkbox"> Thiệp cưới (Quà tặng)</label>
+                <label><input type="checkbox"> Thiệp tỏ tình (Quà tặng)</label>
             </div>
         </div>
 
         <div class="box-container">
             <div class="summary">
                 <div class="summary-section">
-                    <h3>TÓM TẮT ĐƠN HÀNG</h3>
-                    <p><span>Tổng tiền hàng:</span> <span id="total-raw">0₫</span></p>
-                    <p><span>Tạm tính:</span> <span id="subtotal">0₫</span></p>
-                    <p class="total"><span>Tổng tiền:</span> <span id="total">0₫</span></p>
+                <h3>TÓM TẮT ĐƠN HÀNG</h3>
+                <p><span>Tổng tiền hàng:</span> <span id="total-raw">0₫</span></p>
+                <p><span>Tạm tính:</span> <span id="subtotal">0₫</span></p>
+                <p class="total"><span>Tổng tiền:</span> <span id="total">0₫</span></p>
                 </div>
             </div>
             <div class="summary">
@@ -46,7 +40,7 @@
         </div>
     </div>
 
-    <script src="/scripts/giohang.js"></script>
+    <script src="../scripts/giohang.js"></script>
 
     <div id="footer"></div>
     <script src="../scripts/linkFooter.js"></script>
