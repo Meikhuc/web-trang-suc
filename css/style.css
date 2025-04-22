@@ -55,6 +55,7 @@
     background: #f9f9f9;
     padding: 0px;
     border-bottom: 1px solid #ccc;
+    width: 100%;
   }
 
   nav a {
@@ -165,7 +166,7 @@
   .breadcrumb {
     max-width: 1200px;
     margin: 20px auto;
-    font-size: 14px;
+    font-size: 13px;
     color: #555;
   }
 
@@ -181,8 +182,7 @@
   .slider-container {
     width: 100%;
     overflow: hidden;
-    margin: 20px auto;
-    border-radius: 12px;
+    margin: 0px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
 

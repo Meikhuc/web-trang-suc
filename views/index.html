@@ -9,10 +9,6 @@
 <body>
     <div id="header"></div>
     <script src="../scripts/linkHeader.js"></script>
-  
-    <div class="breadcrumb">
-        <a href="#">Trang chủ</a> &gt; <a href="#">Danh mục</a> &gt; <span>Trang hiện tại</span>
-    </div>
     
       <section>
         <div class="slider-container">
@@ -48,62 +44,7 @@
           </div>
         </div>
       </section>
-    
-      <script>
-        // Lấy danh sách đã yêu thích từ localStorage
-        function getFavorites() {
-          return JSON.parse(localStorage.getItem('favorites')) || [];
-        }
-      
-        function setFavorites(favorites) {
-          localStorage.setItem('favorites', JSON.stringify(favorites));
-        }
-      
-        // Cập nhật số yêu thích trên icon header
-        function updateFavoriteCount() {
-          const icon = document.getElementById('favorite-icon');
-          const favorites = getFavorites();
-          icon.setAttribute('data-count', favorites.length);
-        }
-      
-        // Xử lý click vào từng trái tim sản phẩm
-        function toggleProductFavorite(event) {
-          const btn = event.currentTarget;
-          const productId = btn.getAttribute('data-id');
-          let favorites = getFavorites();
-      
-          if (favorites.includes(productId)) {
-            favorites = favorites.filter(id => id !== productId);
-            btn.textContent = '🤍';
-          } else {
-            favorites.push(productId);
-            btn.textContent = '❤️';
-          }
-      
-          setFavorites(favorites);
-          updateFavoriteCount();
-        }
-      
-        // Khi trang load: đánh dấu sản phẩm đã yêu thích
-        window.addEventListener('DOMContentLoaded', () => {
-          const favoriteButtons = document.querySelectorAll('.favorite-btn');
-          const favorites = getFavorites();
-      
-          favoriteButtons.forEach(btn => {
-            const id = btn.getAttribute('data-id');
-            if (favorites.includes(id)) {
-              btn.textContent = '❤️';
-            } else {
-              btn.textContent = '🤍';
-            }
-      
-            btn.addEventListener('click', toggleProductFavorite);
-          });
-      
-          updateFavoriteCount();
-        });
-      </script>
-      
+
     <div id="footer"></div>
     <script src="../scripts/linkFooter.js"></script>
 

@@ -27,7 +27,7 @@
     <script src="../scripts/linkHeader.js"></script>
   
     <div class="breadcrumb">
-        <a href="#">Trang chủ</a> &gt; <a href="#">Danh mục</a> &gt; <span>Trang hiện tại</span>
+      <a href="../views/index.htm">🏠</a> &gt; <a href="../views/index.html">Trang chủ</a> &gt; <span>Trang hiện tại</span>
     </div>
 
     <div class="bo-loc-container">
@@ -91,7 +91,7 @@
   <div class="container">
     <div class="main-product-bst">
       <!-- Icon trái tim nằm trên ảnh chính -->
-      <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+      <span data-id="1001" class="heart-icon" >♥</span>
       <img src="https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1740984846/ptb400vv_1741070718.png.webp" alt="Dây chuyền bướm" />
       <div class="info">
         <div class="main-badge">🎁 Quà tặng 0đ</div>
@@ -105,7 +105,7 @@
     <div class="related-product-bsts">
       <!-- product-bst item 1 -->
       <div class="product-bst-item">
-        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <span data-id="1002" class="heart-icon" >♥</span>
         <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 1" />
         <div class="info">
           <div class="badge">🎁 Quà tặng 0đ</div>
@@ -116,7 +116,7 @@
         </div>
       </div>
       <div class="product-bst-item">
-        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <span data-id="1003" class="heart-icon" >♥</span>
         <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cưới" />
         <div class="info">
           <div class="badge">🎁 Quà tặng 0đ</div>
@@ -127,7 +127,7 @@
         </div>
       </div>
       <div class="product-bst-item">
-        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <span data-id="1004" class="heart-icon" >♥</span>
         <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 2" />
         <div class="info">
           <div class="badge">🎁 Quà tặng 0đ</div>
@@ -138,7 +138,7 @@
         </div>
       </div>
       <div class="product-bst-item">
-        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <span data-id="1005" class="heart-icon" >♥</span>
         <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 2" />
         <div class="info">
           <div class="badge">🎁 Quà tặng 0đ</div>
@@ -149,7 +149,7 @@
         </div>
       </div>
       <div class="product-bst-item">
-        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <span data-id="1006" class="heart-icon" >♥</span>
         <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 2" />
         <div class="info">
           <div class="badge">🎁 Quà tặng 0đ</div>
@@ -160,7 +160,7 @@
         </div>
       </div>
       <div class="product-bst-item">
-        <span id="favorite-icon" class="heart-icon" onclick="toggleFavorite()">♥</span>
+        <span data-id="1007" class="heart-icon" >♥</span>
         <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp" alt="Nhẫn cầu hôn 2" />
         <div class="info">
           <div class="badge">🎁 Quà tặng 0đ</div>
@@ -173,16 +173,17 @@
     </div>
   </div>
 
-  <script src="/web-trang-suc/scripts/kich_hoat_icon_trai_tim.js"></script>
-
   <script>
     //Dua du lieu vao trang sp yeu thich
-    const product = {
-        id: 1001,
-        title: 'Nhẫn vàng 14k',
-        price: '8.129.000₫',
-        img: 'https://cdn.huythanhjewelry.vn/storage/photos/shares/01upload/1716344629/nc841w6_1716515893.png'
-    };
+    const products = [
+        {id: 1001, title: 'Nhẫn vàng 14k', price: '30.695.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1740984846/ptb400vv_1741070718.png.webp'},
+        {id: 1002, title: 'Nhẫn vàng 14k', price: '3.695.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp'},
+        {id: 1003, title: 'Nhẫn vàng 14k', price: '3.695.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp'},
+        {id: 1004, title: 'Nhẫn vàng 14k', price: '3.695.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp'},
+        {id: 1005, title: 'Nhẫn vàng 14k', price: '3.695.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp'},
+        {id: 1006, title: 'Nhẫn vàng 14k', price: '3.695.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp'},
+        {id: 1007, title: 'Nhẫn vàng 14k', price: '10.695.000₫', img: 'https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp'}
+  ];
   </script>
 
   <script src="/web-trang-suc/scripts/dua_du_lieu_vao_sp_yeu_thich.js"></script>

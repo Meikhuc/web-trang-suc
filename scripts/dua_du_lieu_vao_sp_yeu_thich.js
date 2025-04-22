@@ -1,32 +1,42 @@
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+function isFavorite(id) {
+  return favorites.includes(id);
+}
+
+function toggleFavorite(id) {
+  if (isFavorite(id)) {
+    favorites = favorites.filter(favId => favId !== id);
+  } else {
+    favorites.push(id);
+  }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  updateHeartIcons();
+}
+
+function updateHeartIcons() {
+  document.querySelectorAll('.heart-icon').forEach(icon => {
+    const id = parseInt(icon.getAttribute('data-id'));
+    if (isFavorite(id)) {
+      icon.classList.add('active-heart');
+    } else {
+      icon.classList.remove('active-heart');
+    }
+  });
+}
+
+// Gắn sự kiện sau khi DOM đã load
 document.addEventListener("DOMContentLoaded", () => {
-    const icon = document.getElementById("favorite-icon");
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  document.querySelectorAll('.heart-icon').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const id = parseInt(icon.dataset.id);
+      toggleFavorite(id);
+    });
+  });
 
-    function isFavorite(id) {
-        return favorites.some(p => p.id === id);
-    }
-
-    function updateHeartIcon() {
-        if (isFavorite(product.id)) {
-            icon.classList.add("active-heart");
-        } else {
-            icon.classList.remove("active-heart");
-        }
-    }
-
-    window.toggleFavorite = () => {
-        const exists = isFavorite(product.id);
-        if (exists) {
-            favorites = favorites.filter(p => p.id !== product.id);
-        } else {
-            favorites.push(product);
-        }
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-        updateHeartIcon();
-    };
-
-    updateHeartIcon();
+  updateHeartIcons(); // cập nhật trạng thái trái tim khi load
 });
+
 
 // Ham chuyen anh
 function changeMainImage(src) {
