@@ -7,24 +7,6 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../bo san pham css/sp1.css">
   <link rel="stylesheet" href="../css/heart-icon(bo sp).css">
-  <style>
-    .heart-icon {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 26px;
-        color: #ccc;
-        cursor: pointer;
-        transition: color 0.3s;
-        z-index: 10;
-        right: 140px;
-        top: 20px;
-        }
-
-    .heart-icon.active-heart {
-        color: red;
-        }
-  </style>
 </head>
 <body>
     <div id="header"></div>
@@ -32,41 +14,41 @@
 
     <!-- Phần chi tiết sản phẩm -->
     <div class="product-container">
-      <div class="product-images">
-        <!-- Icon trái tim nằm trên ảnh chính -->
-        <span
-            class="heart-icon"
-            data-id="0003"
-            data-title="Dây chuyền 14k"
-            data-price="3.579.000₫"
-            data-img="https://tnj.vn/15494-large_default/day-chuyen-bac-nu-mat-trai-tim-chu-love-dinh-da-dep-dcn0421.jpg"
-        >♥</span>  
-        
-        <!-- Ảnh chính -->
-        <img class="main-img" src="https://tnj.vn/15494-large_default/day-chuyen-bac-nu-mat-trai-tim-chu-love-dinh-da-dep-dcn0421.jpg" alt="Nhẫn vàng 14k">
-  
-        <!-- Thumbnail -->
-        <div class="thumbnails">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYYg1pM9tT5C6a1QrclKUlaynb19FQYa3bfXMGitRe8x66nsb9FmtIT2GrHQOACFilZKo&usqp=CAU" alt="Ảnh 1" onclick="changeMainImage(this.src)">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPSUON6bkx-nf5ncuVCKu1IFqh1IwW_H5LQs1nK_2UwYskXSHun5Lv84VJAxisq-JY19o&usqp=CAU" alt="Ảnh 2" onclick="changeMainImage(this.src)">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2oqI21uQZRF2oURi0_yon-BHDFCbpHARtBbIz3nuZPn4n457t9i3PknzHIWLQacakttg&usqp=CAU" alt="Ảnh 3" onclick="changeMainImage(this.src)">
+        <div class="product-images">
+            <!-- Icon trái tim nằm trên ảnh chính -->
+            <span
+                class="heart-icon"
+                data-id="2001"
+                data-title="Nhẫn cầu hôn Vàng 14K đá CZ"
+                data-price="4.997.000₫"
+                data-img="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1713754025/ndino28461_1716276404.png.webp"
+            >♥</span> 
+            
+            <!-- Ảnh chính -->
+            <img class="main-img" src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1713754025/ndino28461_1716276404.png.webp" alt="Nhẫn vàng 14k">
+    
+            <!-- Thumbnail -->
+            <div class="thumbnails">
+                <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1713754025/ndino28461_1716276404.png.webp" alt="Ảnh 1" onclick="changeMainImage(this.src)">
+                <img src="https://cdn.huythanhjewelry.vn/storage/rs300/shares/01upload/1713754025/ndino2843_1716276404.jpg.webp" alt="Ảnh 2" onclick="changeMainImage(this.src)">
+                <img src="https://cdn.huythanhjewelry.vn/storage/rs300/shares/01upload/1713754025/ndino2841_1716276404.jpg.webp" alt="Ảnh 3" onclick="changeMainImage(this.src)">
+            </div>
         </div>
-        </div>
+
         <div class="product-details">
-        <p><strong>PROMIS</strong></p>
-        <h1>Dây chuyền cầu hôn</h1>
-        <p>Mã sản phẩm: <strong>NC1553W</strong></p>
-        <div class="price">3.579.000₫</div>
+            <p><strong>PROMIS</strong></p>
+            <h1>Nhẫn cưới Vàng 14K đá CZ</h1>
+            <p>Mã sản phẩm: <strong>NC841W</strong></p>
+        <div class="price">4.997.000₫</div>
 
         <div class="sizes">
             <p><strong>Chọn size nhẫn:</strong></p>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>10</button>
-            <button>11</button>
+            <button onclick="selectSize(this)" class="selected">7</button>
+            <button onclick="selectSize(this)">8</button>
+            <button onclick="selectSize(this)">9</button>
+            <button onclick="selectSize(this)">10</button>
+            <button onclick="selectSize(this)">11</button>
         </div>
-    
 
         <div class="colors">
             <p><strong>Chọn màu sắc:</strong></p>
@@ -124,13 +106,13 @@
     <div id="product-detail" class="tab-content active">
         <!-- Thông tin nhẫn cưới nữ nằm giữa trang -->
         <div class="information">
-        <h2>Thông tin dây chuyền nữ</h2>
-        <img src="https://tnj.vn/15494-large_default/day-chuyen-bac-nu-mat-trai-tim-chu-love-dinh-da-dep-dcn0421.jpg" alt="Nhẫn cưới nữ">
+        <h2>Thông tin nhẫn cưới nữ</h2>
+        <img src="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1713754025/ndino28461_1716276404.png.webp" alt="Nhẫn cưới nữ">
         <div class="information-sp">
             <ul class="list">
             <li>
                 <div class="label">Mã sản phẩm:</div>
-                <span>NC1553W</span>
+                <span>NC841W</span>
             </li>
             <li>
                 <div class="label">Chất liệu:</div>
@@ -271,15 +253,15 @@
                 </tr>
             </tbody>
         </table>
-    </div>
-
+    </div>     
+    
     <script src="../scripts/dua_du_lieu_vao_sp_yeu_thich.js"></script>
 
     <script>
         window.product = {
-        name: "Dây chuyền 14k",
-        img: "https://tnj.vn/15494-large_default/day-chuyen-bac-nu-mat-trai-tim-chu-love-dinh-da-dep-dcn0421.jpg",
-        price: 3579000
+        name: "Nhẫn cầu hôn Vàng 14K đá CZ",
+        img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1713754025/ndino28461_1716276404.png.webp",
+        price: 4997000
     };
     </script>
 

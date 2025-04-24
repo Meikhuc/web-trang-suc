@@ -184,6 +184,19 @@ body {
       margin-inline-end: 0px;
       unicode-bidi: isolate;
     }
+    
+    .main-product-bst .info p a{
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .main-product-bst .info p a:hover{
+      text-decoration: none;
+      color: pink;
+      font-weight: bold;
+      transition: 0.4s;
+    }
 
     .main-product-bst .info .price {
       color: #e26b6b;
@@ -232,6 +245,19 @@ body {
       margin-inline-start: 0px;
       margin-inline-end: 0px;
       unicode-bidi: isolate;
+    }
+
+    .product-bst-item .info p a{
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .product-bst-item .info p a:hover{
+      text-decoration: none;
+      color: pink;
+      font-weight: bold;
+      transition: 0.4s;
     }
 
     .product-bst-item .info .price {

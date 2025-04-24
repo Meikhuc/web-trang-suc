@@ -1,14 +1,15 @@
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 function isFavorite(id) {
-  return favorites.includes(id);
+  return favorites.some(p => p.id === id);
 }
 
-function toggleFavorite(id) {
-  if (isFavorite(id)) {
-    favorites = favorites.filter(favId => favId !== id);
+function toggleFavorite(product) {
+  const exists = isFavorite(product.id);
+  if (exists) {
+    favorites = favorites.filter(p => p.id !== product.id);
   } else {
-    favorites.push(id);
+    favorites.push(product);
   }
   localStorage.setItem("favorites", JSON.stringify(favorites));
   updateHeartIcons();
@@ -16,7 +17,7 @@ function toggleFavorite(id) {
 
 function updateHeartIcons() {
   document.querySelectorAll('.heart-icon').forEach(icon => {
-    const id = parseInt(icon.getAttribute('data-id'));
+    const id = parseInt(icon.dataset.id);
     if (isFavorite(id)) {
       icon.classList.add('active-heart');
     } else {
@@ -25,17 +26,20 @@ function updateHeartIcons() {
   });
 }
 
-// Gắn sự kiện sau khi DOM đã load
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.heart-icon').forEach(icon => {
-    icon.addEventListener('click', () => {
-      const id = parseInt(icon.dataset.id);
-      toggleFavorite(id);
-    });
+// Gắn sự kiện cho tất cả sản phẩm
+document.querySelectorAll('.heart-icon').forEach(icon => {
+  icon.addEventListener('click', () => {
+    const product = {
+      id: parseInt(icon.dataset.id),
+      title: icon.dataset.title,
+      price: icon.dataset.price,
+      img: icon.dataset.img
+    };
+    toggleFavorite(product);
   });
-
-  updateHeartIcons(); // cập nhật trạng thái trái tim khi load
 });
+
+updateHeartIcons(); // cập nhật biểu tượng trái tim khi trang load
 
 
 // Ham chuyen anh
