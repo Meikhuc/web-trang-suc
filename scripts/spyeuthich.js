@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const id = parseInt(e.target.getAttribute("data-id"));
           favorites = favorites.filter(p => p.id !== id);
           localStorage.setItem("favorites", JSON.stringify(favorites));
-          localStorage.removeItem('favorites'); 
+          /*localStorage.removeItem('favorites'); */
           renderFavorites(); // cập nhật lại
         });
       });

@@ -5,9 +5,8 @@
     padding: 20px 0px 0px 20px;
     margin: 20px 0px 0px 20px;
     display: flex; 
-    justify-content: 
-    space-between; align-items: 
-    flex-start; 
+    justify-content: space-between; 
+    align-items: flex-start; 
     gap: 20px; 
 }
 .cart { 
@@ -21,7 +20,8 @@
 }
 .cart-item img { 
     width: 60px; 
-    margin-right: 20px; }
+    margin-right: 20px; 
+  }
 .item-info { 
   flex: 1; 
 }

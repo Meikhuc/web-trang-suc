@@ -2,173 +2,106 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giỏ Hàng Của Bạn</title>
+  <title>Demo Hover Sản phẩm</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #fff; }
-    .container { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
-    .cart { width: 65%; }
-    .cart-item { border-bottom: 1px solid #ccc; padding: 10px 0; display: flex; align-items: center; }
-    .cart-item img { width: 60px; margin-right: 20px; }
-    .item-info { flex: 1; }
-    .quantity-control { display: inline-flex; align-items: center; }
-    .quantity-control button { width: 25px; height: 25px; }
-    .price { width: 120px; text-align: right; font-weight: bold; }
-    .summary { width: 30%; background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.05); padding: 20px; border-radius: 4px; }
-    .summary h3 {
-      margin-top: 0;
-      font-size: 20px;
-      color: #2d2d2d;
-    }
-    .summary-section {
-      margin-bottom: 20px;
-    }
-    .summary-section p {
-      margin: 10px 0;
-      font-size: 16px;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
       display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 5px;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    .summary-section p.total {
+    
+    .product-card {
+      width: 250px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .product-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.08);
+    }
+
+    .add-product-to-cart {
+      width: 100%;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 16px;
+      background-color: white;
+      color: blue;
+      font-weight: 100;
+      border: 1px solid blue;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .product-card:hover .add-product-to-cart {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-brand {
+      color: #0056b3;
+      font-size: 14px;
+      margin: 5px 0;
+      text-transform: uppercase;
+    }
+
+    .product-name {
+      font-size: 16px;
+      color: #000;
+      margin: 5px 0;
+    }
+
+    .product-price {
+      color: #e53935;
       font-weight: bold;
+      margin: 10px 0 0 0;
       font-size: 18px;
-      border: none;
     }
-    .btn { padding: 12px; width: 100%; margin-top: 10px; border: none; cursor: pointer; font-size: 15px; }
-    .btn-primary { background: #f5a9a9; color: #fff; border-radius: 3px; }
-    .btn-secondary { background: #fff; border: 1px solid #ccc; border-radius: 3px; }
-    .gift-section { margin-top: 20px; }
-    .gift-section label { display: block; margin-bottom: 10px; }
   </style>
 </head>
 <body>
-  <h2 id="cart-title">GIỎ HÀNG CỦA BẠN</h2>
-  <div class="container">
-    <div class="cart" id="cart-container">
-      <!-- Cart items được thêm động -->
-      <div class="gift-section">
-        <p>Quà tặng (Có 2 phần quà trong giỏ hàng)</p>
-        <label><input type="checkbox"> Thiệp cưới (Quà tặng)</label>
-        <label><input type="checkbox"> Thiệp tỏ tình (Quà tặng)</label>
-      </div>
-    </div>
 
-    <div class="summary">
-      <div class="summary-section">
-        <h3>TÓM TẮT ĐƠN HÀNG</h3>
-        <p><span>Tổng tiền hàng:</span> <span id="total-raw">0₫</span></p>
-        <p><span>Tạm tính:</span> <span id="subtotal">0₫</span></p>
-        <p class="total"><span>Tổng tiền:</span> <span id="total">0₫</span></p>
-      </div>
-      <div>
-        <button class="btn btn-primary">MUA HÀNG</button>
-        <button class="btn btn-secondary">MUA THÊM SẢN PHẨM</button>
-      </div>
-    </div>
+<div class="product-card">
+  <div class="product-image">
+    <img src="https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1740984846/ptb400vv_1741070718.png.webp" alt="Bộ trang sức vàng 14K">
   </div>
+  <div class="product-info">
+    <h3 class="product-brand">CRYSTAL HAVEN</h3>
+    <p class="product-name">Bộ trang sức vàng 14K đá quý Mã não</p>
+    <p class="product-price">30.695.000₫</p>    
+  </div>
+  <button class="add-product-to-cart">Thêm vào giỏ hàng</button>
+</div>
 
-  <script>
-    const cartItemsData = [
-      {
-        name: 'Dây chuyền DCPTB375',
-        img: 'necklace.jpg',
-        color: 'Vàng Trắng',
-        date: '19/04/2025',
-        price: 7616000,
-        quantity: 1
-      },
-      {
-        name: 'Bông tai BTPTB375',
-        img: 'earrings.jpg',
-        color: 'Vàng Trắng',
-        date: '19/04/2025',
-        price: 3950000,
-        quantity: 1
-      },
-      {
-        name: 'Nhẫn cầu hôn NDINO284 (Đợt mới)',
-        img: 'ring.jpg',
-        color: 'Vàng Trắng',
-        date: '25/04/2025',
-        price: 4997000,
-        quantity: 1
-      }
-    ];
-
-    function formatVND(number) {
-      return number.toLocaleString('vi-VN') + '₫';
-    }
-
-    function updateSummary() {
-      let total = 0;
-      document.querySelectorAll('.cart-item').forEach(item => {
-        const checkbox = item.querySelector('input[type="checkbox"]');
-        if (!checkbox.checked) return;
-
-        const qty = parseInt(item.querySelector('.qty').value) || 0;
-        const price = parseInt(item.getAttribute('data-price'));
-        total += qty * price;
-      });
-
-      document.getElementById('total-raw').textContent = formatVND(total);
-      document.getElementById('subtotal').textContent = formatVND(total);
-      document.getElementById('total').textContent = formatVND(total);
-
-      const itemCount = document.querySelectorAll('.cart-item input[type="checkbox"]:checked').length;
-      document.getElementById('cart-title').textContent = `GIỎ HÀNG CỦA BẠN (có ${itemCount} sản phẩm trong giỏ hàng)`;
-    }
-
-    function createCartItem(data) {
-      const item = document.createElement('div');
-      item.className = 'cart-item';
-      item.setAttribute('data-price', data.price);
-      item.innerHTML = `
-        <input type="checkbox" checked>
-        <img src="${data.img}" alt="${data.name}">
-        <div class="item-info">
-          <strong>${data.name}</strong><br>
-          ${data.color}<br>
-          Ngày dự kiến nhận hàng: ${data.date}
-        </div>
-        <div class="quantity-control">
-          <button class="minus">-</button>
-          <input type="text" value="${data.quantity}" class="qty" style="width: 30px; text-align:center;">
-          <button class="plus">+</button>
-        </div>
-        <div class="price">${formatVND(data.price)}</div>
-      `;
-
-      item.querySelector('.plus').addEventListener('click', () => {
-        const input = item.querySelector('.qty');
-        input.value = parseInt(input.value) + 1;
-        updateSummary();
-      });
-
-      item.querySelector('.minus').addEventListener('click', () => {
-        const input = item.querySelector('.qty');
-        input.value = Math.max(1, parseInt(input.value) - 1);
-        updateSummary();
-      });
-
-      item.querySelector('.qty').addEventListener('input', updateSummary);
-      item.querySelector('input[type="checkbox"]').addEventListener('change', updateSummary);
-
-      return item;
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const cartContainer = document.getElementById('cart-container');
-      const giftSection = document.querySelector('.gift-section');
-
-      cartItemsData.forEach(itemData => {
-        const cartItem = createCartItem(itemData);
-        cartContainer.insertBefore(cartItem, giftSection);
-      });
-
-      updateSummary();
-    });
-  </script>
 </body>
 </html>

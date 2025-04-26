@@ -126,11 +126,26 @@ body {
       flex: 1;
       text-align: center;
       position: relative;
+      transition: box-shadow 0.3s ease;
     }
 
-    .main-product-bst img {
-      max-width: 106%;
+    .main-product-bst:hover {
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .main-product-img {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .main-product-img img {
+      width: 100%;
       height: auto;
+      transition: transform 0.4s ease;
+    }
+
+    .main-product-bst:hover .main-product-img img{
+      transform: scale(1.08);
     }
 
     .main-product-bst .tags {
@@ -138,26 +153,6 @@ body {
       justify-content: center;
       gap: 10px;
       margin-top: 20px;
-    }
-
-    .main-badge {
-      display: inline-block;
-      background: #ffebeb;
-      color: #d60000;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 25px;
-      margin: 2px 2px 4px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #ffebeb;
-      color: #d60000;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 15px;
-      margin: 2px 2px 4px;
     }
 
     .main-product-bst .info-main {
@@ -201,7 +196,48 @@ body {
     .main-product-bst .info .price {
       color: #e26b6b;
       font-weight: bold;
-      margin-top: 5px;
+      margin: 5px 0px 50px 0px;
+    }
+
+    .main-badge {
+      display: inline-block;
+      background: #ffebeb;
+      color: #d60000;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 25px;
+      margin: 2px 2px 4px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffebeb;
+      color: #d60000;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 15px;
+      margin: 2px 2px 4px;
+    }
+
+    .add-product-to-cart {
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 16px;
+      background-color: white;
+      color: blue;
+      font-weight: 100;
+      border: 1px solid blue;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .main-product-bst:hover .add-product-to-cart {
+      opacity: 1;
+      transform: translate(-50%, 0);
     }
 
     /*sp con*/

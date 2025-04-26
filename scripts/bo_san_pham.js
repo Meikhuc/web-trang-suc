@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const qtyInput = document.getElementById("quantity");
     let value = parseInt(qtyInput.value) || 1;
     value += change;
-    qtyInput.value = value < 1 ? 1 : value;
+    qtyInput.value = value < 1 ? 1 : value; // Nếu nhỏ hơn 1 thì giữ là 1, không cho giảm xuống 0 hoặc âm
   };
 
   window.selectSize = function (button) {
