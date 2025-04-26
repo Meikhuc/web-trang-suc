@@ -27,7 +27,7 @@ window.addEventListener('click', function () {
   });
 
   // Chỉ chọn 1 checkbox trong "Khoảng giá"
-  const priceCheckboxes = document.querySelectorAll('#priceDropdown input[type="checkbox"]');
+  //const priceCheckboxes = document.querySelectorAll('#priceDropdown input[type="checkbox"]');
   priceCheckboxes.forEach(cb => {
     cb.addEventListener('change', function () {
       if (this.checked) {
