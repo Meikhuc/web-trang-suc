@@ -33,10 +33,6 @@ body {
     margin: 100px 0px;
 }
 
-.bosuutap-description { 
-
-}
-
 .bosuutap-description h2 { 
     margin-bottom: 10px; 
 }
@@ -57,8 +53,19 @@ body {
 .bosuutap { 
     text-align: center; 
     width: 48%; 
-    line-height: 1.6;
+    line-height: 2.0;
     position: relative;
+    transition: box-shadow 0.3s ease;
+    flex: 1;
+}
+
+.bosuutap:hover {
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+.bosuutap:hover .add-product-to-cart {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 .bosuutap a{
