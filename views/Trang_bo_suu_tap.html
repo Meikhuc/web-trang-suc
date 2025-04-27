@@ -128,7 +128,7 @@
             <div class="price">29.977.000₫</div>
           </div>
         </div>
-        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+        <button class="add-main-product-to-cart" onclick="addToCart(2005)">Thêm vào giỏ hàng</button>
         </div>
     
         <div class="related-product-bsts">
@@ -149,6 +149,7 @@
               <p><a href="/bo san pham/san_pham_id_2006.html">Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên</a></p>
               <div class="price">73.273.000₫</div>
             </div>
+            <button class="add-product-to-cart" onclick="addToCart(2006)">Thêm vào giỏ hàng</button>
           </div>
     
           <!-- product-bst item 2 -->
@@ -168,6 +169,7 @@
               <p><a href="/bo san pham/san_pham_id_2006.html">Nhẫn Cầu Hôn Vàng 14K Kim Cương Lab-Grown</a></p>
               <div class="price">26.779.000₫</div>
             </div>
+            <button class="add-product-to-cart" onclick="addToCart(2007)">Thêm vào giỏ hàng</button>
           </div>
     
           <!-- product-bst item 3 -->
@@ -187,6 +189,7 @@
               <p><a href="/bo san pham/san_pham_id_2006.html">Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên</a></p>
               <div class="price">30.016.000₫</div>
             </div>
+            <button class="add-product-to-cart" onclick="addToCart(2008)">Thêm vào giỏ hàng</button>
           </div>
     
           <!-- product-bst item 4 -->
@@ -206,6 +209,7 @@
               <p><a href="/bo san pham/san_pham_id_2006.html">Nhẫn Cầu Hôn Vàng 14K Kim Cương Lab-Grown</a></p>
               <div class="price">26.719.000₫</div>
             </div>
+            <button class="add-product-to-cart" onclick="addToCart(2009)">Thêm vào giỏ hàng</button>
           </div>
     
           <!-- product-bst item 5 -->
@@ -225,6 +229,7 @@
               <p><a href="/bo san pham/san_pham_id_2006.html">Nhẫn Cầu Hôn Vàng 14K Kim Cương Lab-Grown</a></p>
               <div class="price">12.249.000₫</div>
             </div>
+            <button class="add-product-to-cart" onclick="addToCart(2010)">Thêm vào giỏ hàng</button>
           </div>
     
           <!-- product-bst item 6 -->
@@ -244,17 +249,22 @@
               <p><a href="/bo san pham/san_pham_id_2006.html">Nhẫn Cầu Hôn Vàng 14K Kim Cương Lab-Grown</a></p>
               <div class="price">17.543.000₫</div>
             </div>
+            <button class="add-product-to-cart" onclick="addToCart(2011)">Thêm vào giỏ hàng</button>
           </div>
     
         </div>
     </div>
 
     <script>
-      window.product = {
-          name: "Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên",
-          img: "https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1713754076/ndino235bldia7_1716369261.png.webp",
-          price: 29977000
-      };
+      window.product = [
+          {id:2005, name: "Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên", img: "https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1713754076/ndino235bldia7_1716369261.png.webp", price: 29977000},
+          {id:2006, name: "Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp", price: 73273000},
+          {id:2007, name: "Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp", price: 26779000},
+          {id:2008, name: "Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp", price: 30016000},
+          {id:2009, name: "Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp", price: 26719000},
+          {id:2010, name: "Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp", price: 12249000},
+          {id:2011, name: "Nhẫn Cầu Hôn Vàng 14K Kim Cương Tự Nhiên", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1722852076/ndino248kc7_1723022972.png.webp", price: 17543000}
+      ];
     </script>
 
     <script src="../scripts/themvaogiohang.js"></script>

@@ -164,11 +164,11 @@ body {
     }
 
     .main-product-bst .info h4 {
-      font-weight: bold;
       color: #004080;
       display: block;
       font-weight: bold;
       margin: 10px 0 5px;
+      font-size: 30px;
     }
 
     .main-product-bst .info p {
@@ -184,6 +184,7 @@ body {
       text-decoration: none;
       color: black;
       font-weight: bold;
+      font-size: 20px;
     }
 
     .main-product-bst .info p a:hover{
@@ -196,6 +197,7 @@ body {
     .main-product-bst .info .price {
       color: #e26b6b;
       font-weight: bold;
+      font-size: 20px;
       margin-top: 5px;
     }
 
@@ -205,7 +207,7 @@ body {
       color: #d60000;
       padding: 2px 6px;
       border-radius: 4px;
-      font-size: 25px;
+      font-size: 33px;
       margin: 2px 2px 4px;
     }
 
