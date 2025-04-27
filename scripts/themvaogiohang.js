@@ -21,19 +21,43 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedColor = button.textContent;
     };
   
-    window.addToCart = function () {
+    window.addToCart = function (selectedId) {
+      const quantity = 1;
+  
+      const selectedProduct = window.product.find(p => p.id === selectedId);
+  
+      if (!selectedProduct) {
+          alert("Không tìm thấy sản phẩm!");
+          return;
+      }
+  
       const finalProduct = {
-        ...window.product, // lấy từ HTML
-        size: selectedSize,
-        color: selectedColor,
-        quantity: 1,
-        date: new Date().toLocaleDateString("vi-VN")
+          id: selectedProduct.id,
+          name: selectedProduct.name,
+          img: selectedProduct.img,
+          price: selectedProduct.price,
+          size: selectedSize,
+          color: selectedColor,
+          quantity: quantity,
+          date: new Date().toLocaleDateString("vi-VN")
       };
   
       const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-      cart.push(finalProduct);
+  
+      const existingProduct = cart.find(item => 
+          item.id === selectedProduct.id &&
+          item.color === selectedColor &&
+          item.size === selectedSize
+      );
+  
+      if (existingProduct) {
+          existingProduct.quantity += quantity;
+      } else {
+          cart.push(finalProduct);
+      }
+  
       localStorage.setItem("cartItems", JSON.stringify(cart));
       alert("Đã thêm sản phẩm vào giỏ hàng!");
-    };
+  };  
     });
     

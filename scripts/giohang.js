@@ -8,8 +8,13 @@ if (storedCart && storedCart.length > 0) {
     // localStorage.removeItem('cartItems'); // Xoá tạm bị tắt để giữ giỏ hàng khi load lại
 }
 
-function formatVND(number) {
-    return number.toLocaleString('vi-VN') + '₫';
+// --- Sửa chỗ này ---
+function formatVND(price) {
+    if (typeof price === 'string') {
+        price = parseInt(price.replace(/[^\d]/g, ''), 10);
+    }
+    if (!price) price = 0;
+    return price.toLocaleString('vi-VN') + '₫';
 }
 
 function updateSummary() {
@@ -36,7 +41,16 @@ function updateSummary() {
 function createCartItem(data) {
     const item = document.createElement('div');
     item.className = 'cart-item';
-    item.setAttribute('data-price', data.price);
+
+    // --- Sửa nhẹ chỗ này: nếu data.price là chuỗi thì cũng ép về số luôn ---
+    let priceNumber = data.price;
+    if (typeof priceNumber === 'string') {
+        priceNumber = parseInt(priceNumber.replace(/[^\d]/g, ''), 10);
+    }
+    if (!priceNumber) priceNumber = 0;
+
+    item.setAttribute('data-price', priceNumber);
+
     item.innerHTML = `
         <input type="checkbox" checked>
         <img src="${data.img}" alt="${data.name}">
@@ -52,7 +66,7 @@ function createCartItem(data) {
             <button class="plus">+</button>
         </div>
         <div class="price">
-            ${formatVND(data.price)}
+            ${formatVND(priceNumber)}
             <button class="remove-btn">×</button>
         </div>`;
 

@@ -108,7 +108,7 @@
         <div class="price">30.695.000₫</div>
       </div>
     </div>
-    <button class="add-main-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+    <button class="add-main-product-to-cart" onclick="addToCart(1001)">Thêm vào giỏ hàng</button>
     </div>
   
     <div class="related-product-bsts">
@@ -130,7 +130,7 @@
           <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 18K Kim cương Lab-grown</a></p>
           <div class="price">20.695.000₫</div>
         </div>
-        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+        <button class="add-product-to-cart" onclick="addToCart(1002)">Thêm vào giỏ hàng</button>
       </div>
       <div class="product-bst-item">
         <span
@@ -149,7 +149,7 @@
           <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cưới Vàng 14K Kim cương Lab-grown</a></p>
           <div class="price">9.200.000₫</div>
         </div>
-        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+        <button class="add-product-to-cart" onclick="addToCart(1003)">Thêm vào giỏ hàng</button>
       </div>
       <div class="product-bst-item">
         <span
@@ -168,7 +168,7 @@
           <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K Đá Moissanite</a></p>
           <div class="price">8.273.000₫</div>
         </div>
-        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+        <button class="add-product-to-cart" onclick="addToCart(1004)">Thêm vào giỏ hàng</button>
       </div>
       <!-- Thêm sản phẩm khác nếu cần với id khác nhau -->
       <div class="product-bst-item">
@@ -188,7 +188,7 @@
           <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K Đá Moissanite</a></p>
           <div class="price">13.299.000₫</div>
         </div>
-        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+        <button class="add-product-to-cart" onclick="addToCart(1005)">Thêm vào giỏ hàng</button>
       </div>
       <div class="product-bst-item">
         <span
@@ -207,7 +207,7 @@
           <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K Đá Moissanite</a></p>
           <div class="price">8.806.000₫</div>
         </div>
-        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+        <button class="add-product-to-cart" onclick="addToCart(1006)">Thêm vào giỏ hàng</button>
       </div>
       <div class="product-bst-item">
         <span
@@ -226,7 +226,7 @@
           <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K Đá Moissanite</a></p>
           <div class="price">25.255.000₫</div>
         </div>
-        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+        <button class="add-product-to-cart" onclick="addToCart(1007)">Thêm vào giỏ hàng</button>
       </div>
     </div>
   </div>
@@ -234,11 +234,15 @@
   <script src="../scripts/bo_loc_san_pham.js"></script>
   
   <script>
-    window.product = {
-        name: "Bộ trang sức vàng 14K Đá quý Mã não",
-        img: "https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1740984846/ptb400vv_1741070718.png.webp",
-        price: 30695000,
-    };
+    window.product = [
+        {id: 1001, name: "Bộ trang sức vàng 14K Đá quý Mã não", img: "https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1740984846/ptb400vv_1741070718.png.webp", price: 30695000},
+        {id: 1002, name: "Nhẫn cầu hôn Vàng 18K Kim cương Lab-grown", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp", price: 20695000},
+        {id: 1003, name: "Nhẫn cưới Vàng 14K Kim cương Lab-grown", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp", price: 9200000},
+        {id: 1004, name: "Nhẫn cầu hôn Vàng 14K Đá Moissanite", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp", price: 8273000},
+        {id: 1005, name: "Nhẫn cầu hôn Vàng 14K Đá Moissanite", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp", price: 13299000},
+        {id: 1006, name: "Nhẫn cầu hôn Vàng 14K Đá Moissanite", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp", price: 8806000},
+        {id: 1007, name: "Nhẫn cầu hôn Vàng 14K Đá Moissanite", img: "https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp", price: 30695000}
+    ];
   </script>
 
   <script src="../scripts/themvaogiohang.js"></script>
