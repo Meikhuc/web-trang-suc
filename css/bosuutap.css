@@ -160,7 +160,7 @@ body {
     }
 
     .main-product-bst .info {
-      margin-top: 10px;
+      margin-top: 50px;
     }
 
     .main-product-bst .info h4 {
@@ -196,7 +196,7 @@ body {
     .main-product-bst .info .price {
       color: #e26b6b;
       font-weight: bold;
-      margin: 5px 0px 50px 0px;
+      margin-top: 5px;
     }
 
     .main-badge {
@@ -219,8 +219,8 @@ body {
       margin: 2px 2px 4px;
     }
 
-    .add-product-to-cart {
-      width: 100%;
+    .add-main-product-to-cart {
+      width: 40%;
       position: absolute;
       bottom: 0px;
       left: 50%;
@@ -235,7 +235,7 @@ body {
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    .main-product-bst:hover .add-product-to-cart {
+    .main-product-bst:hover .add-main-product-to-cart {
       opacity: 1;
       transform: translate(-50%, 0);
     }
@@ -252,6 +252,33 @@ body {
     .product-bst-item {
       text-align: center;
       position: relative;
+      flex: 1;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .product-bst-item:hover {
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .add-product-to-cart {
+      width: 50%;
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 16px;
+      background-color: white;
+      color: blue;
+      font-weight: 100;
+      border: 1px solid blue;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .product-bst-item:hover .add-product-to-cart {
+      opacity: 1;
+      transform: translate(-50%, 0);
     }
 
     .product-bst-item img {
@@ -300,5 +327,5 @@ body {
       color: #f26b8a;
       font-weight: bold;
       font-size: 16px;
-      margin-top: 5px;
+      margin: 5px 0px 45px 0px;
     }

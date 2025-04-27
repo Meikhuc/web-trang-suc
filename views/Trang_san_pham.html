@@ -38,16 +38,16 @@
           <div class="dropdown" id="priceDropdown">
               <button class="dropbtn">Khoảng giá ▼</button>
               <div class="dropdown-content">
-                  <label><input type="checkbox"> Nhỏ hơn 5.000.000đ</label>
-                  <label><input type="checkbox"> Từ 5.000.000đ - 7.000.000đ</label>
-                  <label><input type="checkbox"> Từ 7.000.000đ - 10.000.000đ</label>
-                  <label><input type="checkbox"> Từ 10.000.000đ - 15.000.000đ</label>
-                  <label><input type="checkbox"> Từ 15.000.000đ - 20.000.000đ</label>
-                  <label><input type="checkbox"> Lớn hơn 20.000.000đ</label>
-              </div>
+                <label><input type="checkbox" data-range="0-5000000"> Nhỏ hơn 5.000.000đ</label>
+                <label><input type="checkbox" data-range="5000000-7000000"> Từ 5.000.000đ - 7.000.000đ</label>
+                <label><input type="checkbox" data-range="7000000-10000000"> Từ 7.000.000đ - 10.000.000đ</label>
+                <label><input type="checkbox" data-range="10000000-15000000"> Từ 10.000.000đ - 15.000.000đ</label>
+                <label><input type="checkbox" data-range="15000000-20000000"> Từ 15.000.000đ - 20.000.000đ</label>
+                <label><input type="checkbox" data-range="20000000--1"> Lớn hơn 20.000.000đ</label>
+            </div>            
           </div>
 
-          <div class="dropdown">
+          <div class="dropdown" id="colorDropdown">
               <button class="dropbtn">Màu sắc ▼</button>
               <div class="dropdown-content">
                   <label><input type="checkbox"> Vàng</label>
@@ -56,22 +56,22 @@
               </div>
           </div>
 
-          <div class="dropdown">
+          <div class="dropdown" id="materialDropdown">
               <button class="dropbtn">Chất liệu ▼</button>
               <div class="dropdown-content">
-                  <label><input type="checkbox"> 10k</label>
-                  <label><input type="checkbox"> 14k</label>
-                  <label><input type="checkbox"> 18k</label>
+                  <label><input type="checkbox"> 10K</label>
+                  <label><input type="checkbox"> 14K</label>
+                  <label><input type="checkbox"> 18K</label>
               </div>
           </div>
 
-          <div class="dropdown">
+          <div class="dropdown" id="stoneDropdown">
               <button class="dropbtn">Đá ▼</button>
               <div class="dropdown-content">
                   <label><input type="checkbox"> Đá CZ</label>
                   <label><input type="checkbox"> Đá Moissanite</label>
                   <label><input type="checkbox"> Ngọc Trai</label>
-                  <label><input type="checkbox"> Kim cương lab-grown</label>
+                  <label><input type="checkbox"> Kim cương Lab-grown</label>
                   <label><input type="checkbox"> Kim cương tự nhiên</label>
               </div>
           </div>
@@ -93,7 +93,7 @@
       <span
         class="heart-icon"
         data-id="1001"
-        data-title="Bộ trang sức vàng 14K đá quý Mã não"
+        data-title="Bộ trang sức vàng 14K Đá quý Mã não"
         data-price="30.695.000₫"
         data-img="https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1740984846/ptb400vv_1741070718.png.webp"
       >♥</span>
@@ -103,11 +103,11 @@
         <div class="main-badge">🎁 Quà tặng 0đ</div>
         <div class="main-badge">🚚 Freeship</div>
         <h4>CRYSTAL HAVEN</h4>
-        <p><a href="/bo san pham/san_pham_id_1001.html">Bộ trang sức vàng 14K đá quý Mã não</a></p>
+        <p><a href="/bo san pham/san_pham_id_1001.html">Bộ trang sức vàng 14K Đá quý Mã não</a></p>
         <div class="price">30.695.000₫</div>
       </div>
     </div>
-    <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+    <button class="add-main-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
     </div>
   
     <div class="related-product-bsts">
@@ -128,6 +128,7 @@
           <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 18K Kim cương Lab-grown</a></p>
           <div class="price">20.695.000₫</div>
         </div>
+        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
       </div>
       <div class="product-bst-item">
         <span
@@ -145,12 +146,13 @@
           <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cưới Vàng 14K Kim cương Lab-grown</a></p>
           <div class="price">9.200.000₫</div>
         </div>
+        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
       </div>
       <div class="product-bst-item">
         <span
           class="heart-icon"
           data-id="1004"
-          data-title="Nhẫn cầu hôn Vàng 14K đá Moissanite"
+          data-title="Nhẫn cầu hôn Vàng 14K Đá Moissanite"
           data-price="8.273.000₫"
           data-img="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp"
         >♥</span>
@@ -159,16 +161,17 @@
           <div class="badge">🎁 Quà tặng 0đ</div>
           <div class="badge">🚚 Freeship</div>
           <h4>BEYOND</h4>
-          <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K đá Moissanite</a></p>
+          <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K Đá Moissanite</a></p>
           <div class="price">8.273.000₫</div>
         </div>
+        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
       </div>
       <!-- Thêm sản phẩm khác nếu cần với id khác nhau -->
       <div class="product-bst-item">
         <span
           class="heart-icon"
           data-id="1005"
-          data-title="Nhẫn cầu hôn Vàng 14K đá Moissanite"
+          data-title="Nhẫn cầu hôn Vàng 14K Đá Moissanite"
           data-price="13.299.000₫"
           data-img="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp"
         >♥</span>
@@ -177,15 +180,16 @@
           <div class="badge">🎁 Quà tặng 0đ</div>
           <div class="badge">🚚 Freeship</div>
           <h4>BEYOND</h4>
-          <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K đá Moissanite</a></p>
+          <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K Đá Moissanite</a></p>
           <div class="price">13.299.000₫</div>
         </div>
+        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
       </div>
       <div class="product-bst-item">
         <span
           class="heart-icon"
           data-id="1006"
-          data-title="Nhẫn cầu hôn Vàng 14K đá Moissanite"
+          data-title="Nhẫn cầu hôn Vàng 14K Đá Moissanite"
           data-price="8.806.000₫"
           data-img="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp"
         >♥</span>
@@ -194,15 +198,16 @@
           <div class="badge">🎁 Quà tặng 0đ</div>
           <div class="badge">🚚 Freeship</div>
           <h4>BEYOND</h4>
-          <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K đá Moissanite</a></p>
+          <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K Đá Moissanite</a></p>
           <div class="price">8.806.000₫</div>
         </div>
+        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
       </div>
       <div class="product-bst-item">
         <span
           class="heart-icon"
           data-id="1007"
-          data-title="Nhẫn cầu hôn Vàng 14K đá Moissanite"
+          data-title="Nhẫn cầu hôn Vàng 14K Đá Moissanite"
           data-price="25.255.000₫"
           data-img="https://cdn.huythanhjewelry.vn/storage/rs600/shares/01upload/1743751594/ndino335vt1_1743751807.png.webp"
         >♥</span>
@@ -211,16 +216,19 @@
           <div class="badge">🎁 Quà tặng 0đ</div>
           <div class="badge">🚚 Freeship</div>
           <h4>BEYOND</h4>
-          <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K đá Moissanite</a></p>
+          <p><a href="/bo san pham/san_pham_id_1002.html">Nhẫn cầu hôn Vàng 14K Đá Moissanite</a></p>
           <div class="price">25.255.000₫</div>
         </div>
+        <button class="add-product-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
       </div>
     </div>
   </div>
   
+  <script src="../scripts/bo_loc_san_pham.js"></script>
+  
   <script>
     window.product = {
-        name: "Bộ trang sức vàng 14K đá quý Mã não",
+        name: "Bộ trang sức vàng 14K Đá quý Mã não",
         img: "https://cdn.huythanhjewelry.vn/storage/rs1100/shares/01upload/1740984846/ptb400vv_1741070718.png.webp",
         price: 30695000,
     };
