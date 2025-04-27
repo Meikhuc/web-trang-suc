@@ -33,7 +33,8 @@ document.querySelectorAll('.heart-icon').forEach(icon => {
       id: parseInt(icon.dataset.id),
       title: icon.dataset.title,
       price: icon.dataset.price,
-      img: icon.dataset.img
+      img: icon.dataset.img,
+      link: icon.dataset.link
     };
     toggleFavorite(product);
   });

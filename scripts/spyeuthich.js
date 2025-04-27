@@ -14,8 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
         container.innerHTML += `
           <div class="product">
             <span class="heart-icon" data-id="${p.id}">♥</span>
-            <img src="${p.img}" alt="${p.title}">
-            <div class="product-title">${p.title}</div>
+            <a href="${p.link}">
+              <img src="${p.img}" alt="${p.title}">
+            </a>
+            <div class="product-title"><a href="${p.link}">${p.title}</a></div>
             <div class="product-price">${p.price}</div>
           </div>`;
       });
