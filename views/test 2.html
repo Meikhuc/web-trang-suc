@@ -40,54 +40,117 @@
     .product img {
       width: 150px;
     }
-    a:visited
+
+    /* Thêm phần icon tròn có số lượng */
+    .icon-circle {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #aaa;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      position: relative;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .icon-circle::after {
+      content: attr(data-count);
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: red;
+      color: white;
+      font-size: 10px;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon-circle[data-count="0"]::after,
+    .icon-circle[data-count=""]::after {
+      display: none;
+    }
+    @keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.icon-circle.pulsing {
+  animation: pulse 0.4s ease-in-out;
+}
+
   </style>
 </head>
 <body>
   <div id="header"></div>
   <script src="../scripts/linkHeader.js"></script>
+
   <h1>Danh sách sản phẩm yêu thích</h1>
   <div class="favorites-container" id="favorite-products"></div>
 
+  <!-- Script cập nhật data-count cho trái tim -->
   <script>
-     document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById("favorite-products");
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("favorite-products");
+  const heartIcon = document.getElementById("favorite-icon");
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    function renderFavorites() {
-      container.innerHTML = '';
+  function updateHeartCount() {
+  if (heartIcon) {
+    heartIcon.setAttribute("data-count", favorites.length);
 
-      if (favorites.length === 0) {
-        container.innerHTML = `<div class="empty-msg">Bạn chưa yêu thích sản phẩm nào!</div>`;
-        return;
-      }
+    // Thêm hiệu ứng pulse
+    heartIcon.classList.add("pulsing");
+    setTimeout(() => {
+      heartIcon.classList.remove("pulsing");
+    }, 400); // thời gian trùng với animation
+  }
+}
 
+
+  function renderFavorites() {
+    container.innerHTML = '';
+
+    if (favorites.length === 0) {
+      container.innerHTML = `<div class="empty-msg">Bạn chưa yêu thích sản phẩm nào!</div>`;
+    } else {
       favorites.forEach(p => {
         container.innerHTML += `
           <div class="product">
             <span class="heart-icon" data-id="${p.id}">♥</span>
-            <img src="${p.img}" alt="${p.title}">
-            <div class="product-title">${p.title}</div>
+            <a href="${p.link}">
+              <img src="${p.img}" alt="${p.title}">
+            </a>
+            <div class="product-title"><a href="${p.link}">${p.title}</a></div>
             <div class="product-price">${p.price}</div>
           </div>`;
       });
-
-      // Gắn sự kiện hủy yêu thích
-      document.querySelectorAll(".heart-icon").forEach(icon => {
-        icon.addEventListener("click", (e) => {
-          const id = parseInt(e.target.getAttribute("data-id"));
-          favorites = favorites.filter(p => p.id !== id);
-          localStorage.setItem("favorites", JSON.stringify(favorites));
-          renderFavorites(); // cập nhật lại
-        });
-      });
     }
 
-    renderFavorites();
-  });
+    updateHeartCount(); // 👉 Mỗi lần render thì cập nhật số lượng luôn
+
+    // Gán sự kiện xoá yêu thích
+    document.querySelectorAll(".heart-icon").forEach(icon => {
+      icon.addEventListener("click", (e) => {
+        const id = parseInt(e.target.getAttribute("data-id"));
+        favorites = favorites.filter(p => p.id !== id);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        renderFavorites(); // 👉 Sau khi xóa thì render lại
+      });
+    });
+  }
+
+  renderFavorites();
+});
   </script>
-  
+
   <div id="footer"></div>
   <script src="../scripts/linkFooter.js"></script>
+
 </body>
 </html>

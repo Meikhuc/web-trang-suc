@@ -81,3 +81,222 @@ body {
     padding: 6px;
     font-size: 14px;
 }
+
+
+/*Phần BST */
+
+.container {
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+  }
+
+  .main-product-bst {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .main-product-bst:hover {
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+  }
+
+  .main-product-img {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .main-product-img img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+  }
+
+  .main-product-bst:hover .main-product-img img{
+    transform: scale(1.08);
+  }
+
+  .main-product-bst .tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .main-product-bst .info-main {
+    margin-top: 15px;
+  }
+
+  .main-product-bst .info {
+    margin-top: 50px;
+  }
+
+  .main-product-bst .info h4 {
+    color: #004080;
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    font-size: 30px;
+  }
+
+  .main-product-bst .info p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+  }
+  
+  .main-product-bst .info p a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .main-product-bst .info p a:hover{
+    text-decoration: none;
+    color: pink;
+    font-weight: bold;
+    transition: 0.4s;
+  }
+
+  .main-product-bst .info .price {
+    color: #e26b6b;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 5px;
+  }
+
+  .main-badge {
+    display: inline-block;
+    background: #ffebeb;
+    color: #d60000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 33px;
+    margin: 2px 2px 4px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #ffebeb;
+    color: #d60000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 15px;
+    margin: 2px 2px 4px;
+  }
+
+  .add-main-product-to-cart {
+    width: 40%;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    background-color: white;
+    color: blue;
+    font-weight: 100;
+    border: 1px solid blue;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .main-product-bst:hover .add-main-product-to-cart {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  /*sp con*/
+
+  .related-product-bsts {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .product-bst-item {
+    text-align: center;
+    position: relative;
+    flex: 1;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .product-bst-item:hover {
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+  }
+
+  .add-product-to-cart {
+    width: 50%;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    background-color: white;
+    color: blue;
+    font-weight: 100;
+    border: 1px solid blue;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .product-bst-item:hover .add-product-to-cart {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .product-bst-item img {
+    width: 60%;
+    height: auto;
+  }
+
+  .product-bst-item .tags {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 10px 0;
+  }
+
+  .product-bst-item .info h4 {
+    font-weight: bold;
+    color: #004080;
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+  }
+
+  .product-bst-item .info p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+  }
+
+  .product-bst-item .info p a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+
+  .product-bst-item .info p a:hover{
+    text-decoration: none;
+    color: pink;
+    font-weight: bold;
+    transition: 0.4s;
+  }
+
+  .product-bst-item .info .price {
+    color: #f26b8a;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px 0px 45px 0px;
+  }
